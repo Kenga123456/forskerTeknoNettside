@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spirologi</title>
+    <link rel="stylesheet" href="menustyles.css" />
+    <script src="menu.js"></script>
+  </head>
+  <body>
+    <h1>Bilder</h1>
+    <div id="images-container"></div>
+
+    <script>
+      fetch("bilder.json")
+        .then((res) => res.json())
+        .then((images) => {
+          const imgContainer = document.getElementById("images-container");
+
+          images.forEach((src) => {
+            const child = document.createElement("div");
+            const img = document.createElement("img");
+
+            img.src = `https://images.weserv.nl/?url=${encodeURIComponent(
+              //for å fikse problem med at browser ikke liker http elns :(
+              src.replace(/^https?:\/\//, "")
+            )}`;
+
+            img.style.width = "100px";
+
+            child.appendChild(img);
+            imgContainer.appendChild(child);
+          });
+        });
+
+      document.querySelector(".icon").addEventListener("click", function () {
+        document.querySelector("#menu").classList.toggle("show");
+      });
+    </script>
+  </body>
+
+  <style>
+    #images-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    #images-container img {
+      width: 200px !important;
+    }
+    
+    .bildested {
+      border-bottom: 3px solid black;
+    }
+  </style>
+</html>
