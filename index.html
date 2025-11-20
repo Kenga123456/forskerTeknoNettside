@@ -10,17 +10,92 @@
     rel="stylesheet">
     <link rel="stylesheet" href="./meny.css" />
     <title>forskertekno/Home</title>
+
+    <style>
+      /*____________________________Main____________________________________*/
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      /*____________________________Infocards____________________________________*/
+      .info-card {
+        margin-top: 6%;
+        width: 80%;
+        padding: 3%;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #card-tekno {
+        background: linear-gradient(
+            135deg,
+            rgba(3, 30, 53, 0.9),
+            rgba(11, 33, 52, 0.4)
+          ),
+          url("https://svalbardfolkehogskole.no/wp-content/uploads/2023/10/IMG_5757-768x1024.jpg")
+            center/cover;
+      }
+      #card-forsker {
+        background: linear-gradient(
+            135deg,
+            rgba(3, 30, 53, 0.9),
+            rgba(11, 33, 52, 0.4)
+          ),
+          url("https://svalbardfolkehogskole.no/wp-content/uploads/2020/12/FS-Cecilia2-1-832x1024.jpg")
+            center/cover;
+      }
+      .info-card > div {
+        width: 50%;
+      }
+      .info-card > div > img {
+        width: 50%;
+        aspect-ratio: 1/1;
+      }
+      .card-img-con {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: end;
+      }
+      article > div > a {
+        color: var(--accent);
+      }
+      /*____________________________Kull____________________________________*/
+      .kull-con {
+        display: flex;
+        justify-content: center;
+        margin-top: 3%;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .kull-card {
+        cursor: pointer;
+        color: var(--night);
+        background-color: snow;
+        flex: 1 1 calc(25% - 2rem);
+        min-width: 220px;
+        max-width: 320px;
+        aspect-ratio: 3/4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 40px;
+        margin-bottom: 2rem;
+      }
+    </style>
   </head>
   <body>
     <header>
       <img src="./ressurser/SFHS_logo.png" alt="" id="logo" />
       <div class="title">
         <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
-        <div id="title-under">Teknologi & Innovasjon, Forskning og felt</div>
+        <div id="title-under">Teknologi & Innovasjon, Forskning og Felt</div>
       </div>
       <nav>
-        <a href="">Prosjekter</a>
-        <a href="spill.html">Spill</a>
+        <a href="#prosjekter">Prosjekter</a>
+        <a href="">Spill</a>
         <a href="">FAQ</a>
         <a href="https://svalbardfolkehogskole.no/">Om skolen</a>
         <a href="https://www.folkehogskole.no/soknad?school=88" class="apply"
@@ -28,5 +103,94 @@
         >
       </nav>
     </header>
+    <main>
+      <article class="info-card" id="card-tekno">
+        <div>
+          <h2>Teknologi & Innovasjon</h2>
+          <br />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quia
+            distinctio ut quos illo saepe corporis in doloribus. Non impedit
+            provident soluta exercitationem pariatur unde corporis rem libero ex
+            ipsum!
+          </p>
+          <a
+            href="https://svalbardfolkehogskole.no/linjer/innovasjon-og-teknologi/"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+        <div class="card-img-con">
+          <img src="./ressurser/Tekno-Logo.png" alt="" />
+        </div>
+      </article>
+
+      <article class="info-card" id="card-forsker">
+        <div>
+          <h2>Forskning og felt</h2>
+          <br />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quia
+            distinctio ut quos illo saepe corporis in doloribus. Non impedit
+            provident soluta exercitationem pariatur unde corporis rem libero ex
+            ipsum!
+          </p>
+          <a
+            href="https://svalbardfolkehogskole.no/linjer/forskning-og-felt-svalbard/"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+        <div class="card-img-con">
+          <img src="./ressurser/Forsker-Logo.png" alt="" />
+        </div>
+      </article>
+      <br /><br />
+      <h2 id="prosjekter">Prosjekter</h2>
+      <article class="kull">
+        <div class="kull-con">
+          <a href="">
+            <div
+              class="kull-card"
+              style="
+                background: linear-gradient(
+                    135deg,
+                    rgba(153, 200, 241, 0.9),
+                    rgba(255, 255, 255, 0.733)
+                  ),
+                  url('./ressurser/Snapchat-1931596108_Original.png')
+                    center/cover;
+              "
+            >
+              <div>
+                <h3>25/26</h3>
+              </div>
+            </div>
+          </a>
+
+          <a href="">
+            <div
+              class="kull-card"
+              style="
+                background: linear-gradient(
+                    135deg,
+                    rgba(153, 200, 241, 0.9),
+                    rgba(255, 255, 255, 0.733)
+                  ),
+                  url('./ressurser/Image.jpg') center/cover;
+              "
+            >
+              <div>
+                <h3>24/25</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <p>2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire</p>
+    </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
