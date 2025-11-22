@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <img src="./bilder/SFHS_logo.png" alt="" id="logo" />
+      <div class="title">
+        <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
+        <div id="title-under">Teknologi & Innovasjon, Forskning og felt</div>
+      </div>
+      <div class="menu-collapsed"><p>Menu</p></div>
+      <navbar class="menu">
+        <a href="index.html">Hjem</a>
+        <a href="spill.html">Spill</a>
+        <a href="faq.html">FAQ</a>
+        <a href="">Om skolen</a>
+      </navbar>
+    </header>
+  </body>
+
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      padding: 10px 20px;
+      display: flex;
+      background-color: #07121c;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    #logo {
+      height: 15vh;
+      margin-left: 5%;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: bold;
+      width: 50%;
+    }
+    #title-over {
+      font-size: 1.3vw;
+      color: #7fd8ff;
+    }
+    #title-under {
+      font-size: 2vw;
+      color: white;
+    }
+
+    .menu-collapsed {
+      display: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 80px;
+    }
+
+    .menu-collapsed p {
+      display: flex;
+      align-items: center;
+      color: white;
+      margin-right: 30px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #f6fbff;
+      font-weight: bold;
+    }
+
+    .menu a:last-child {
+      color: #00c0a3;
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        flex-direction: column;
+        gap: 10px;
+        display: none;
+        position: absolute;
+        top: 120px;
+        right: 32px;
+        background-color: #07121c;
+        align-items: center;
+      }
+
+      .menu-collapsed {
+        display: block;
+        height: fit-content;
+        width: fit-content;
+      }
+
+      .menu a {
+        padding: 0.5rem 1rem;
+      }
+
+      #title-over {
+        font-size: 1.8vw;
+        color: #7fd8ff;
+      }
+      #title-under {
+        font-size: 2.2vw;
+        color: white;
+      }
+    }
+
+    /*animation for menu*/
+    .menu.show-menu {
+      display: flex;
+    }
+
+    a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #f6fbff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+    a:hover::after {
+      transform: scaleX(1);
+    }
+  </style>
+
+  <script>
+    const menuCollapsed = document.querySelector(".menu-collapsed");
+    const menu = document.querySelector(".menu");
+
+    menuCollapsed.addEventListener("click", () => {
+      menu.classList.toggle("show-menu");
+    });
+  </script>
+</html>
