@@ -33,7 +33,7 @@
         >
       </nav>
 
-      <!-- burger for mobil: viser "Meny" og ikon; dropdown vil vises under denne knappen -->
+      <!-- burgermeny for mobil: viser "Meny" og ikon; dropdown vil vises under denne knappen -->
       <div class="mobile-menu-wrapper">
         <button
           class="menu-toggle"
@@ -55,37 +55,51 @@
         </p>
       </section>
 
+      
       <section class="trips-section">
         <h2>Turer og ekskursjoner</h2>
         <div class="trips-container">
-          <a href="tur1.html" class="trip-card">
+          <button class="trip-card" data-trip="tur1">
             <img src="images/tur1.jpg" alt="Tur 1" class="trip-card-image" />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
               <h3>Feltarbeid ved innsjøen</h3>
               <p>Kort oppsummering av hva vi gjorde på feltarbeid.</p>
             </div>
-          </a>
+          </button>
 
-          <a href="tur2.html" class="trip-card">
+          <button class="trip-card" data-trip="tur2">
             <img src="images/tur2.jpg" alt="Tur 2" class="trip-card-image" />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
               <h3>Besøk til teknologisenteret</h3>
               <p>En dag med demonstrasjoner og workshops.</p>
             </div>
-          </a>
+          </button>
 
-          <a href="tur3.html" class="trip-card">
+          <button class="trip-card" data-trip="tur3">
             <img src="images/tur3.jpg" alt="Tur 3" class="trip-card-image" />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
               <h3>Naturvandring</h3>
               <p>Observasjoner og notater fra naturvandringen.</p>
             </div>
-          </a>
+          </button>
         </div>
       </section>
+
+      <!-- Modal som vises når man klikker på tur -->
+      <div class="modal" id="tripModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose">&times;</button>
+          <div class="modal-body">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div class="modal-images" id="modalImages"></div>
+          </div>
+        </div>
+      </div>
 
       <section class="filter-section">
         <button class="filter-btn active" data-filter="all">
@@ -93,12 +107,13 @@
         </button>
         <button class="filter-btn" data-filter="forsker">Forsker</button>
         <button class="filter-btn" data-filter="tekno">Tekno</button>
+        <button class="filter-btn" data-filter="forskertekno">Forsker/Tekno</button>
       </section>
 
       <section class="projects-section">
         <h2>Prosjekter</h2>
-
         <div class="projects-container">
+          <!-- kort til Ammunisjonsboks prosjektet-->
           <a
             href="./ammoprosjektet.html"
             class="project-card"
@@ -116,6 +131,7 @@
             </div>
           </a>
 
+        <!-- kort til sammarbeid med telenor -->
           <a
             href="./bilder.html"
             class="project-card"
@@ -129,7 +145,26 @@
             </div>
           </a>
 
-          <a href="prosjekt3.html" class="project-card" data-category="forsker">
+          <!-- kort til prosjekt 3-->
+          <a 
+            href="prosjekt3.html" 
+            class="project-card" 
+            data-category="forskertekno"
+          >
+            <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
+            <div class="project-card-content">
+              <span class="category-badge forskertekno">Forsker/Tekno</span>
+              <h2>Prosjekt 3</h2>
+              <p>Kort beskrivelse av prosjektet...</p>
+            </div>
+          </a>
+
+          <!-- kort til prosjekt 3-->
+          <a 
+            href="prosjekt3.html" 
+            class="project-card" 
+            data-category="forsker"
+          >
             <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
             <div class="project-card-content">
               <span class="category-badge forsker">Forsker</span>
@@ -137,8 +172,10 @@
               <p>Kort beskrivelse av prosjektet...</p>
             </div>
           </a>
+
         </div>
       </section>
+
     </main>
 
     <footer>
