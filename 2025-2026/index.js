@@ -57,5 +57,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Trip modal data
+    const tripData = {
+        tur1: {
+            title: "Feltarbeid ved innsjøen",
+            description: "En spennende dag med feltarbeid ved innsjøen hvor vi samlet inn data, gjorde observasjoner og lærte om naturvitenskap i praksis.",
+            images: ["images/tur1.jpg", "images/tur1-2.jpg", "images/tur1-3.jpg"]
+        },
+        tur2: {
+            title: "Besøk til teknologisenteret",
+            description: "Vi besøkte teknologisenteret hvor vi fikk se påkostet teknologi, møtte eksperter og deltok i spennende workshops.",
+            images: ["images/tur2.jpg", "images/tur2-2.jpg", "images/tur2-3.jpg"]
+        },
+        tur3: {
+            title: "Naturvandring",
+            description: "En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
+            images: ["images/tur3.jpg", "images/tur3-2.jpg", "images/tur3-3.jpg"]
+        }
+    };
+
+    // Trip modal funksjonalitet
+    const tripCards = document.querySelectorAll('.trip-card');
+    const modal = document.getElementById('tripModal');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalImages = document.getElementById('modalImages');
+
+    function openTripModal(tripId) {
+        const data = tripData[tripId];
+        if (!data) return;
+
+        modalTitle.textContent = data.title;
+        modalDescription.textContent = data.description;
+        modalImages.innerHTML = data.images
+            .map(img => `<img src="${img}" alt="${data.title}" />`)
+            .join('');
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeTripModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    tripCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const tripId = this.getAttribute('data-trip');
+            openTripModal(tripId);
+        });
+    });
+
+    modalClose.addEventListener('click', closeTripModal);
+    modalOverlay.addEventListener('click', closeTripModal);
+
+    // Lukk modal med ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeTripModal();
+        }
+    });
+
     // Kort-klikk ikke nødvendig for navigasjon (kort er <a>), men behold evt. ekstra oppførsel her.
 });

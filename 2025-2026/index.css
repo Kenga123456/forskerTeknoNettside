@@ -6,6 +6,8 @@
     --ice:#b7d1e2;
     --accent:#00c0a3;
     --trip:#ffb74d; /* Ny farge for tur-taggen */
+    --forskertekno:#00a8d8; /* Blanding av glacier og accent */
+    
     --font-primary:"Montserrat",sans-serif;
     --font-secondary:"Space Grotesk",sans-serif;
 }
@@ -166,6 +168,10 @@ a:hover::after{
 }
 .category-badge.tekno {
     background-color: var(--accent);
+    color: var(--night);
+}
+.category-badge.forskertekno {
+    background-color: var(--forskertekno);
     color: var(--night);
 }
 .category-badge.tur {
@@ -352,6 +358,94 @@ footer{
     bottom: 0;
     margin-top: 10%;
     margin-bottom: 3%;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+.modal-content {
+    position: relative;
+    z-index: 1001;
+    background: var(--fjord);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border-top: 3px solid var(--accent);
+    color: var(--snow);
+}
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--snow);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+.modal-close:hover {
+    color: var(--accent);
+}
+.modal-body h2 {
+    font-family: var(--font-secondary);
+    color: var(--glacier);
+    margin-bottom: 1rem;
+}
+.modal-body p {
+    font-family: var(--font-primary);
+    line-height: 1.8;
+    color: var(--ice);
+    margin-bottom: 1.5rem;
+}
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.modal-images img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 250px;
+}
+
+/* Trip-kort som button */
+.trip-card {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 /* Responsive tweaks */
