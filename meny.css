@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background: radial-gradient(circle at top, #0f3d5c 0%, #07121c 60%);
-  height: 100%;
+  min-height: 100%;
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
   padding-top: 20vh;
