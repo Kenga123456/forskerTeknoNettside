@@ -1,4 +1,166 @@
 <!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kull 24/25</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="../meny.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <img src="../bilder/SFHS_logo.png" alt="" id="logo" />
+      <div class="title">
+        <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
+        <div id="title-under">Teknologi & Innovasjon, Forskning og felt</div>
+      </div>
+      <div class="menu-collapsed"><p>Meny</p></div>
+      <nav class="menu">
+        <a href="../index.html">Hjem</a>
+        <a href="../spill.html">Spill</a>
+        <a href="../index.html#prosjekter">Prosjekter</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="https://svalbardfolkehogskole.no/">Søk nå</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="info">
+        <h2>Velkommen til Forsker & Tekno 24/25</h2>
+        <p>
+          
+        </p>
+      </section>
+
+      <section class="trips-section">
+        <h2>Turer og ekskursjoner</h2>
+        <div class="trips-container">
+          <button class="trip-card" data-trip="tur1">
+            <img src="images/tur1.jpg" alt="Tur 1" class="trip-card-image" />
+            <div class="trip-card-content">
+              <span class="category-badge tur">Tur</span>
+              <h2>Hearts In The Ice</h2>
+              <p>Første tur med klassen på starten av året som var en fin mulighet for å bli bedre kjent</p>
+            </div>
+          </button>
+
+          <button class="trip-card" data-trip="tur2">
+            <img src="images/tur2.jpg" alt="Tur 2" class="trip-card-image" />
+            <div class="trip-card-content">
+              <span class="category-badge tur">Tur</span>
+              <h2>Besøk på KSAT</h2>
+              <p>Besøk på KSAT og tur tilbake over Platåfjellet</p>
+            </div>
+          </button>
+
+          <button class="trip-card" data-trip="tur3">
+            <img src="images/tur3.jpg" alt="Tur 3" class="trip-card-image" />
+            <div class="trip-card-content">
+              <span class="category-badge tur">Tur</span>
+              <h2>Fisketur</h2>
+              <p>Fisketur</p>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- Modal som vises når man klikker på tur -->
+      <div class="modal" id="tripModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose">&times;</button>
+          <div class="modal-body">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div class="modal-images" id="modalImages"></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="filter-section">
+        <button class="filter-btn active" data-filter="all">
+          Alle Prosjekter
+        </button>
+        <button class="filter-btn" data-filter="forsker">Forsker</button>
+        <button class="filter-btn" data-filter="tekno">Tekno</button>
+        <button class="filter-btn" data-filter="forskertekno">
+          Forsker/Tekno
+        </button>
+      </section>
+
+      <section class="projects-section">
+        <h2>Prosjekter</h2>
+        <div class="projects-container">
+          <!-- kort til Ammunisjonsboks prosjektet-->
+          <a
+            href="./ammoprosjektet.html"
+            class="project-card"
+            data-category="tekno"
+          >
+            <img
+              src="../bilder/Ammunisjons_boks.png"
+              alt="Ammunisjon boks"
+              class="project-card-image"
+            />
+            <div class="project-card-content">
+              <span class="category-badge tekno">tekno</span>
+              <h2>Ammunisjon boks</h2>
+              <p>I dette prosjektet hadde vi i tekno oppgave med å lage bokkser til å holde ammunisjon på tur</p>
+            </div>
+          </a>
+
+          <!-- kort til sammarbeid med telenor -->
+          <a href="./bilder.html" class="project-card" data-category="tekno">
+            <img src="bilde2.jpg" alt="Prosjekt 2" class="project-card-image" />
+            <div class="project-card-content">
+              <span class="category-badge tekno">Tekno</span>
+              <h2>Telenor samarbeidsprosjekt</h2>
+              <p>Kort beskrivelse av prosjektet...</p>
+            </div>
+          </a>
+
+          <!-- kort til prosjekt 3-->
+          <a
+            href="prosjekt3.html"
+            class="project-card"
+            data-category="forskertekno"
+          >
+            <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
+            <div class="project-card-content">
+              <span class="category-badge forskertekno">Forsker/Tekno</span>
+              <h2>Prosjekt 3</h2>
+              <p>Kort beskrivelse av prosjektet...</p>
+            </div>
+          </a>
+
+          <!-- kort til prosjekt 3-->
+          <a href="prosjekt3.html" class="project-card" data-category="forsker">
+            <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
+            <div class="project-card-content">
+              <span class="category-badge forsker">Forsker</span>
+              <h2>Prosjekt 3</h2>
+              <p>Kort beskrivelse av prosjektet...</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire</p>
+    </footer>
+
+    <script src="./index.js"></script>
+    <script src="../meny.js"></script>
+  </body>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
