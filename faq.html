@@ -224,9 +224,9 @@
     }
 
     .answer {
-      max-height: 0;
+      height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease-out;
+      transition: height 0.3s ease;
       padding-left: 50px;
       background-color: #4a6280;
     }
@@ -251,10 +251,15 @@
       question[i].addEventListener("click", () => {
         for (let j = 0; j < answer.length; j++) {
           if (j !== i) {
-            answer[j].classList.remove("display");
+            answer[j].style.height = "0";
           }
         }
-        answer[i].classList.toggle("display");
+
+        if (answer[i].style.height === "0px" || !answer[i].style.height) {
+          answer[i].style.height = answer[i].scrollHeight + "px";
+        } else {
+          answer[i].style.height = "0";
+        }
       });
     }
   </script>
