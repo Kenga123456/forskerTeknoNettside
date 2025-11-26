@@ -89,8 +89,8 @@ body {
 
 .menu a:last-child {
   color: var(--accent);
+  min-width: 15%;
 }
-
 @media (max-width: 800px) {
   .menu {
     flex-direction: column;
