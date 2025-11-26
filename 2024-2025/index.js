@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 document.querySelectorAll('.project-card').forEach(card => {
                     const category = card.getAttribute('data-category');
-                    if (filter === 'all' || category === filter) {
+                    const category2 = card.getAttribute('data-category2');
+                    if (filter === 'all' || category === filter || category2 === filter) {
                         card.classList.remove('hidden');
                     } else {
                         card.classList.add('hidden');

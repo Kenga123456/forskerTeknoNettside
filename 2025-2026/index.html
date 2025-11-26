@@ -47,6 +47,8 @@
       <section class="trips-section">
         <h2>Turer og ekskursjoner</h2>
         <div class="trips-container">
+
+          <!--Tur til varden-->
           <button class="trip-card" data-trip="tur1">
             <img src="images/tur1.jpg" alt="Tur 1" class="trip-card-image" />
             <div class="trip-card-content">
@@ -56,6 +58,7 @@
             </div>
           </button>
 
+          <!--Kirkehytta-->
           <button class="trip-card" data-trip="tur2">
             <img src="images/tur2.jpg" alt="Tur 2" class="trip-card-image" />
             <div class="trip-card-content">
@@ -65,6 +68,7 @@
             </div>
           </button>
 
+          <!--Andersenhytta-->
           <button class="trip-card" data-trip="tur3">
             <img src="images/tur3.jpg" alt="Tur 3" class="trip-card-image" />
             <div class="trip-card-content">
@@ -76,7 +80,7 @@
         </div>
       </section>
 
-      <!-- Modal som vises når man klikker på tur -->
+      <!--Modal som vises når man klikker på tur-->
       <div class="modal" id="tripModal">
         <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
@@ -90,30 +94,18 @@
       </div>
 
       <section class="filter-section">
-        <button class="filter-btn active" data-filter="all">
-          Alle Prosjekter
-        </button>
+        <button class="filter-btn active" data-filter="all">Alle Prosjekter</button>
         <button class="filter-btn" data-filter="forsker">Forsker</button>
         <button class="filter-btn" data-filter="tekno">Tekno</button>
-        <button class="filter-btn" data-filter="forskertekno">
-          Forsker/Tekno
-        </button>
       </section>
 
       <section class="projects-section">
         <h2>Prosjekter</h2>
         <div class="projects-container">
-          <!-- kort til Ammunisjonsboks prosjektet-->
-          <a
-            href="./ammoprosjektet.html"
-            class="project-card"
-            data-category="tekno"
-          >
-            <img
-              src="../bilder/Ammunisjons_boks.png"
-              alt="Ammunisjon boks"
-              class="project-card-image"
-            />
+
+          <!--Ammunisjonsboks prosjektet-->
+          <a href="./ammoprosjektet.html" class="project-card" data-category="tekno">
+            <img src="../bilder/Ammunisjons_boks.png" alt="Ammunisjon boks" class="project-card-image"/>
             <div class="project-card-content">
               <span class="category-badge tekno">tekno</span>
               <h2>Ammunisjon boks</h2>
@@ -121,36 +113,13 @@
             </div>
           </a>
 
-          <!-- kort til sammarbeid med telenor -->
-          <a href="./bilder.html" class="project-card" data-category="tekno">
+          <!--sammarbeid med telenor -->
+          <a href="./bilder.html" class="project-card" data-category="tekno" data-category2="forsker">
             <img src="bilde2.jpg" alt="Prosjekt 2" class="project-card-image" />
             <div class="project-card-content">
               <span class="category-badge tekno">Tekno</span>
-              <h2>Telenor samarbeidsprosjekt</h2>
-              <p>Kort beskrivelse av prosjektet...</p>
-            </div>
-          </a>
-
-          <!-- kort til prosjekt 3-->
-          <a
-            href="prosjekt3.html"
-            class="project-card"
-            data-category="forskertekno"
-          >
-            <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
-            <div class="project-card-content">
-              <span class="category-badge forskertekno">Forsker/Tekno</span>
-              <h2>Prosjekt 3</h2>
-              <p>Kort beskrivelse av prosjektet...</p>
-            </div>
-          </a>
-
-          <!-- kort til prosjekt 3-->
-          <a href="prosjekt3.html" class="project-card" data-category="forsker">
-            <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
-            <div class="project-card-content">
               <span class="category-badge forsker">Forsker</span>
-              <h2>Prosjekt 3</h2>
+              <h2>Telenor samarbeidsprosjekt</h2>
               <p>Kort beskrivelse av prosjektet...</p>
             </div>
           </a>
