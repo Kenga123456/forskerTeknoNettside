@@ -3,24 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forsker & tekno 25/26</title>
+    <title>Kull 25/26</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="../meny.css" />
+    <link rel="icon" type="image/x-icon" href="SFHS_logo.ico">
   </head>
   <body>
     <header class="navbar">
-      <img src="../bilder/SFHS_logo.png" alt="" id="logo" />
+      <a href="../index.html">
+        <img src="../bilder/SFHS_logo.png" alt="" id="logo" />
+      </a>
       <div class="title">
         <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
-        <div id="title-under">Teknologi & Innovasjon, Forskning og felt</div>
+        <div id="title-under">Teknologi & Forskning</div>
       </div>
       <div class="menu-collapsed"><p>Meny</p></div>
       <nav class="menu">
@@ -28,7 +27,7 @@
         <a href="../spill.html">Spill</a>
         <a href="../index.html#prosjekter">Prosjekter</a>
         <a href="../faq.html">FAQ</a>
-        <a href="https://svalbardfolkehogskole.no/">Søk nå</a>
+        <a href="https://www.folkehogskole.no/skole/svalbard/soknad" target="_blank">Søk nå</a>
       </nav>
     </header>
 
@@ -36,45 +35,50 @@
       <section class="info">
         <h2>Velkommen til Forsker & Tekno 25/26</h2>
         <p>
-          Her finner du prosjektene til våre talentfulle elever innen forsker-
-          og teknofag. Bruk filtreringsknappene for å sortere prosjektene etter
-          kategori.
+          Her er turer og prosjekter vi i forsker & tekno klassen har gjort i
+          skoleåret 2025-2026. Klikk på turene for å se mer informasjon og bilder fra
+          turene. og du kan lese mer om prosjektene vi har jobbet med ved å klikke på
+          prosjektene nederst på siden.
         </p>
       </section>
 
       <section class="trips-section">
         <h2>Turer og ekskursjoner</h2>
         <div class="trips-container">
+
+          <!--Tur til varden-->
           <button class="trip-card" data-trip="tur1">
             <img src="images/tur1.jpg" alt="Tur 1" class="trip-card-image" />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
-              <h3>Feltarbeid ved innsjøen</h3>
-              <p>Kort oppsummering av hva vi gjorde på feltarbeid.</p>
+              <h2>Tur til varden</h2>
+              <p>Første tur med klassen på starten av året som var en fin mulighet for å bli bedre kjent</p>
             </div>
           </button>
 
+          <!--Kirkehytta-->
           <button class="trip-card" data-trip="tur2">
             <img src="images/tur2.jpg" alt="Tur 2" class="trip-card-image" />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
-              <h3>Besøk til teknologisenteret</h3>
-              <p>En dag med demonstrasjoner og workshops.</p>
+              <h2>Kirkehytta</h2>
+              <p>Første hyttetur med overnatting</p>
             </div>
           </button>
 
+          <!--Andersenhytta-->
           <button class="trip-card" data-trip="tur3">
             <img src="images/tur3.jpg" alt="Tur 3" class="trip-card-image" />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
-              <h3>Naturvandring</h3>
-              <p>Observasjoner og notater fra naturvandringen.</p>
+              <h2>Andersenhytta</h2>
+              <p>Overnatting på en litt mer øde hytte uten strøm</p>
             </div>
           </button>
         </div>
       </section>
 
-      <!-- Modal som vises når man klikker på tur -->
+      <!--Modal som vises når man klikker på tur-->
       <div class="modal" id="tripModal">
         <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
@@ -88,67 +92,32 @@
       </div>
 
       <section class="filter-section">
-        <button class="filter-btn active" data-filter="all">
-          Alle Prosjekter
-        </button>
+        <button class="filter-btn active" data-filter="all">Alle Prosjekter</button>
         <button class="filter-btn" data-filter="forsker">Forsker</button>
         <button class="filter-btn" data-filter="tekno">Tekno</button>
-        <button class="filter-btn" data-filter="forskertekno">
-          Forsker/Tekno
-        </button>
       </section>
 
       <section class="projects-section">
         <h2>Prosjekter</h2>
         <div class="projects-container">
-          <!-- kort til Ammunisjonsboks prosjektet-->
-          <a
-            href="./ammoprosjektet.html"
-            class="project-card"
-            data-category="tekno"
-          >
-            <img
-              src="../bilder/Ammunisjons_boks.png"
-              alt="Ammunisjon boks"
-              class="project-card-image"
-            />
+
+          <!--Ammunisjonsboks prosjektet-->
+          <a href="./ammoprosjektet.html" class="project-card" data-category="tekno">
+            <img src="../bilder/Ammunisjons_boks.png" alt="Ammunisjon boks" class="project-card-image"/>
             <div class="project-card-content">
               <span class="category-badge tekno">tekno</span>
               <h2>Ammunisjon boks</h2>
-              <p>Kort beskrivelse av prosjektet...</p>
+              <p>I dette prosjektet hadde vi i tekno oppgave med å lage bokkser til å holde ammunisjon på tur</p>
             </div>
           </a>
 
-          <!-- kort til sammarbeid med telenor -->
-          <a href="./bilder.html" class="project-card" data-category="tekno">
+          <!--sammarbeid med telenor -->
+          <a href="./bilder.html" class="project-card" data-category="tekno" data-category2="forsker">
             <img src="bilde2.jpg" alt="Prosjekt 2" class="project-card-image" />
             <div class="project-card-content">
               <span class="category-badge tekno">Tekno</span>
-              <h2>Telenor samarbeidsprosjekt</h2>
-              <p>Kort beskrivelse av prosjektet...</p>
-            </div>
-          </a>
-
-          <!-- kort til prosjekt 3-->
-          <a
-            href="prosjekt3.html"
-            class="project-card"
-            data-category="forskertekno"
-          >
-            <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
-            <div class="project-card-content">
-              <span class="category-badge forskertekno">Forsker/Tekno</span>
-              <h2>Prosjekt 3</h2>
-              <p>Kort beskrivelse av prosjektet...</p>
-            </div>
-          </a>
-
-          <!-- kort til prosjekt 3-->
-          <a href="prosjekt3.html" class="project-card" data-category="forsker">
-            <img src="bilde3.jpg" alt="Prosjekt 3" class="project-card-image" />
-            <div class="project-card-content">
               <span class="category-badge forsker">Forsker</span>
-              <h2>Prosjekt 3</h2>
+              <h2>Telenor samarbeidsprosjekt</h2>
               <p>Kort beskrivelse av prosjektet...</p>
             </div>
           </a>
@@ -160,6 +129,7 @@
       <p>2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire</p>
     </footer>
 
+    <script src="./index.js"></script>
     <script src="../meny.js"></script>
   </body>
 </html>

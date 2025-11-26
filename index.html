@@ -11,7 +11,8 @@
     />
 
     <link rel="stylesheet" href="./meny.css" />
-    <title>forskertekno/Home</title>
+    <link rel="icon" type="image/x-icon" href="SFHS_logo.ico">
+    <title>Home</title>
 
     <style>
       /*____________________________Main____________________________________*/
@@ -88,18 +89,33 @@
         margin-bottom: 2rem;
       }
 
+  @media (max-width: 600px) {
+  .kull-card {
+    min-width: 150px;
+    max-width: 180px; 
+    flex: 1 1 calc(50% - 1rem); 
+  }
+}
+
       #prosjekter {
         scroll-margin-top: 110px;
         color: white;
+      }
+      /*____________________________Veit ikkje koffor ditta er nødvendig, men ja____________________________________*/
+      h3{
+        color: var(--night);
+        text-decoration: underline var(--night);
       }
     </style>
   </head>
   <body>
     <header class="navbar">
-      <img src="./bilder/SFHS_logo.png" alt="" id="logo" />
+      <a href="./index.html">
+        <img src="./bilder/SFHS_logo.png" alt="" id="logo" />
+      </a>
       <div class="title">
         <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
-        <div id="title-under">Teknologi & Innovasjon, Forskning og felt</div>
+        <div id="title-under">Teknologi & Forskning</div>
       </div>
       <div class="menu-collapsed"><p>Meny</p></div>
       <nav class="menu">
@@ -107,7 +123,7 @@
         <a href="spill.html">Spill</a>
         <a href="index.html#prosjekter">Prosjekter</a>
         <a href="faq.html">FAQ</a>
-        <a href="https://svalbardfolkehogskole.no/">Søk nå</a>
+        <a href="https://www.folkehogskole.no/skole/svalbard/soknad" target="_blank">Søk nå</a>
       </nav>
     </header>
 
@@ -115,12 +131,13 @@
       <article class="info-card" id="card-tekno">
         <div>
           <h2>Teknologi & Innovasjon</h2>
-          <br />
+          <br/>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quia
-            distinctio ut quos illo saepe corporis in doloribus. Non impedit
-            provident soluta exercitationem pariatur unde corporis rem libero ex
-            ipsum!
+            Utforsk framtiden på et av verdens mest unike steder! På linjen Innovasjon og Teknologi jobber du hands-on med ny teknologi midt i det arktiske landskapet.
+            Du lærer alt fra prototyping, robotikk og kreativ problemløsning til hvordan teknologi kan brukes for å forstå og ta vare på naturen rundt oss. 
+            Her får du samarbeide i tverrfaglige prosjekter, teste ideene dine i praksis og utvikle deg både som skaper og tenker.
+            <br><br>
+            Perfekt for deg som er nysgjerrig, løsningsorientert og vil ha et år hvor du kombinerer teknologisk utforskning med arktiske opplevelser du ikke finner noe annet sted.
           </p>
           <a
             href="https://svalbardfolkehogskole.no/linjer/innovasjon-og-teknologi/"
@@ -138,10 +155,11 @@
           <h2>Forskning og felt</h2>
           <br />
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quia
-            distinctio ut quos illo saepe corporis in doloribus. Non impedit
-            provident soluta exercitationem pariatur unde corporis rem libero ex
-            ipsum!
+            Bli med ut i felt og utforsk naturen slik ekte forskere gjør det! På linjen Forskning og Felt får du lære hvordan man samler inn data, bruker forskningsutstyr og jobber metodisk med ekte problemstillinger fra Arktis.
+            Du får prøve deg på alt fra geologi og biologi til klima- og miljøstudier - alltid med Svalbards spektakulære natur som klasserom.
+            <br><br>
+            Dette er linjen for deg som er nysgjerrig på hvordan verden fungerer, liker å være ute, og ønsker et år der du kombinerer vitenskapelig utforsking med store naturopplevelser. 
+            Perfekt for både fremtidige forskere og alle som vil lære å se naturen med nye øyne.
           </p>
           <a
             href="https://svalbardfolkehogskole.no/linjer/forskning-og-felt-svalbard/"
@@ -153,7 +171,7 @@
           <img src="./bilder/Forsker-Logo.png" alt="" />
         </div>
       </article>
-      <br /><br />
+      <br/><br />
       <h2 id="prosjekter">Prosjekter</h2>
       <article class="kull">
         <div class="kull-con">
@@ -175,7 +193,7 @@
             </div>
           </a>
 
-          <a href="">
+          <a href="./2024-2025/index.html">
             <div
               class="kull-card"
               style="

@@ -1,0 +1,457 @@
+:root{
+    --night:#07121c;
+    --fjord:#0f3d5c;
+    --glacier:#7fd8ff;
+    --snow:#f6fbff;
+    --ice:#b7d1e2;
+    --accent:#00c0a3;
+    --trip:#ffb74d; /* Ny farge for tur-taggen */
+    --forskertekno:#00a8d8; /* Blanding av glacier og accent */
+    
+    --font-primary:"Montserrat",sans-serif;
+    --font-secondary:"Space Grotesk",sans-serif;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base */
+body {
+    font-family: var(--font-primary);
+    background: radial-gradient(circle at top, var(--fjord) 0%, var(--night) 60%);
+    color: var(--snow);
+    min-height: 100vh;
+}
+
+/* Header / Nav */
+header{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 16vh;
+    background: var(--night);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding-right: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--snow);
+}
+
+nav{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Logo / Title */
+#logo{
+    height:90%;
+    margin-left: 5%;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    width: 50%;
+}
+#title-over{
+    color: var(--glacier);
+    font-size: 85%;
+}
+#title-under{
+    font-size: 1.3rem;
+}
+.apply{
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Underline animation (gjenbrukt for nav + filter-knapper) */
+nav a, .filter-btn {
+    position: relative;
+    padding-bottom: 0.2rem;
+}
+nav a::after, .filter-btn::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+nav a:hover::after,
+.filter-btn:hover::after,
+.filter-btn.active::after,
+a:hover::after{
+    transform: scaleX(1);
+}
+
+/* Filter knapper */
+.filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 1.5rem auto 2rem auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    color: var(--snow);
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 0;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+    box-shadow: none;
+}
+.filter-btn:hover {
+    border-bottom-color: var(--accent);
+}
+.filter-btn.active {
+    border-bottom-color: var(--accent);
+    color: var(--glacier);
+}
+
+/* Info-boks */
+.info {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    padding: 1.5rem;
+    background: var(--fjord);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: var(--font-primary);
+    color: var(--snow);
+    border-top: 3px solid var(--accent);
+}
+.info h2 {
+    font-family: var(--font-secondary);
+    color: var(--glacier);
+    margin-bottom: 0.5rem;
+}
+
+/* Kategori-badges */
+.category-badge {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+}
+.category-badge.forsker {
+    background-color: var(--glacier);
+    color: var(--night);
+}
+.category-badge.tekno {
+    background-color: var(--accent);
+    color: var(--night);
+}
+.category-badge.forskertekno {
+    background-color: var(--forskertekno);
+    color: var(--night);
+}
+.category-badge.tur {
+    background-color: var(--trip);
+    color: var(--night);
+}
+
+/* Prosjekt / Tur - kort og containere (sammenslått) */
+.projects-container, .trips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.project-card, .trip-card  {
+    background: var(--fjord);
+    color: var(--snow);
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover, .trip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.project-card-image, .trip-card-image {
+    width: 100%;
+    height: 200px;
+    background: radial-gradient(circle at top, var(--fjord) 0%, var(--night) 60%);
+    object-fit: cover;
+    display: block;
+}
+
+.project-card-content, .trip-card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at top, var(--fjord) 0%, var(--night) 60%);
+}
+
+.project-card h2, .trip-card h2 {
+    font-family: var(--font-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}   
+.project-card p, .trip-card p {
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.4;
+    text-align: center;
+}
+.project-card.hidden {
+    display: none;
+}
+
+/* Prosjekt / Tur detaljer (sammenslått) */
+.project-details, .trip-details {
+    display: none;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--fjord) 0%, var(--night) 100%);
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border-top: 3px solid var(--accent);
+}
+.project-details.active, .trip-details.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.project-details h2, .trip-details h2 {
+    font-family: var(--font-secondary);
+    color: var(--glacier);
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.5rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.project-details p, .trip-details p {
+    font-family: var(--font-primary);
+    line-height: 1.8;
+    color: var(--ice);
+}
+
+/* Seksjoner intro / overskrifter */
+.projects-section, .trips-section {
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    padding: 0 1rem 1rem 1rem;
+}
+.projects-section h2, .trips-section h2 {
+    font-family: var(--font-secondary);
+    color: var(--glacier);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.projects-intro, .trips-intro {
+    text-align: center;
+    color: var(--snow);
+    margin-bottom: 1rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile menu / burger */
+.mobile-menu-wrapper { position: relative; }
+
+.menu-toggle{
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 4%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 8px;
+    color: var(--snow);
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+}
+.menu-toggle .menu-label { display: inline-block; vertical-align: middle; user-select: none; }
+.menu-toggle .bars{ display:inline-flex; flex-direction: column; justify-content: center; margin-left:6px; }
+.menu-toggle .bar{
+    display: block;
+    height: 2.5px;
+    width: 18px;
+    background: var(--snow);
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: transform 260ms cubic-bezier(.2,.8,.2,1), opacity 200ms ease;
+}
+.menu-nav.open{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 4%;
+    background: var(--night);
+    padding: 0.5rem 0.75rem;
+    gap: 0.25rem;
+    min-width: 180px;
+    border-radius: 8px;
+    z-index: 200;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+}
+.menu-nav.open a{
+    padding: 0.5rem 1rem;
+    display: block;
+    white-space: nowrap;
+}
+.menu-nav.open a::after{
+    left:0;
+    right:auto;
+    transform-origin:left;
+}
+
+/* Footer */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+.modal-content {
+    position: relative;
+    z-index: 1001;
+    background: var(--fjord);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border-top: 3px solid var(--accent);
+    color: var(--snow);
+}
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--snow);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+.modal-close:hover {
+    color: var(--accent);
+}
+.modal-body h2 {
+    font-family: var(--font-secondary);
+    color: var(--glacier);
+    margin-bottom: 1rem;
+}
+.modal-body p {
+    font-family: var(--font-primary);
+    line-height: 1.8;
+    color: var(--ice);
+    margin-bottom: 1.5rem;
+}
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.modal-images img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 250px;
+}
+
+/* Trip-kort som button */
+.trip-card {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+    /* hide desktop nav and show burger */
+    .menu-toggle{ display: inline-flex; }
+    .menu-nav { display: none; }
+    header { align-items: center; }
+}

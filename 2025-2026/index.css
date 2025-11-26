@@ -194,19 +194,18 @@ a:hover::after{
     color: var(--snow);
     padding: 0;
     border-radius: 10px;
+    border: none;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    border-top: 3px solid transparent;
-    text-decoration: none;
 }
+
 .project-card:hover, .trip-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-    border-top-color: var(--accent);
 }
 
 .project-card-image, .trip-card-image {
@@ -230,12 +229,13 @@ a:hover::after{
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
+}   
 .project-card p, .trip-card p {
     font-family: var(--font-primary);
     font-size: 0.95rem;
     opacity: 0.85;
     line-height: 1.4;
+    text-align: center;
 }
 .project-card.hidden {
     display: none;
