@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 document.querySelectorAll('.project-card').forEach(card => {
                     const category = card.getAttribute('data-category');
-                    const category2 = card.getAttribute('data-category2');
+                    const category2 = card.getAttribute('data-category');
                     if (filter === 'all' || category === filter || category2 === filter) {
                         card.classList.remove('hidden');
                     } else {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tur1: {
             title: "Hearts In The Ice",
             description: 'Klassen ble invitert til å bli med <a href="https://www.heartsintheice.com/">"Hearts In The Ice"</a> på en båttokt rundt sørsiden av Svalbard. Formålet med tokten var å samle klimaaktivister fra hele verden og sammen se på konsekvensene av klimaendringene. Disse er da enda tydeligere på Svalbard. Hver kveld hadde vi diskusjonspaneler med eksperter, og på dagene så vi på både hvalfangsthistorie og isbreer. Vi fikk til slutt også besøke hytta “Bamsebu” som Hilde Fålun Strøm og Sunniva Sorby, stifterne av HITI, overvintret på i 9 måneder.',
-            images: ["images/tur1.jpg", "images/tur1-2.jpg", "images/tur1-3.jpg"]
+            images: ["../bilder/HITI_3.jpg", "../bilder/HITI_4.jpg", "../bilder/HITI_5.jpg", "../bilder/HITI_6.jpg"]
         },
         tur2: {
             title: "Besøk på KSAT",
