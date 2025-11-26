@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./meny.css" />
-    <link rel="icon" type="image/x-icon" href="SFHS_logo.ico">
+    <link rel="icon" type="image/x-icon" href="SFHS_logo.ico" />
     <title>FAQ</title>
   </head>
   <body>
@@ -28,7 +28,11 @@
         <a href="spill.html">Spill</a>
         <a href="index.html#prosjekter">Prosjekter</a>
         <a href="faq.html">FAQ</a>
-        <a href="https://www.folkehogskole.no/skole/svalbard/soknad" target="_blank">Søk nå</a>
+        <a
+          href="https://www.folkehogskole.no/skole/svalbard/soknad"
+          target="_blank"
+          >Søk nå</a
+        >
       </nav>
     </header>
 
@@ -42,13 +46,12 @@
             innovasjonsarbeid og forskningsmetoder i felt. Du lærer blant annet
             datanalyse, datainnsamling og prosjekter i samarbeid med lokale
             bedrifter og forskere.
-            <br><br>
-            <strong>Teknologi og innovasjon</strong> jobber med
-            smarte løsninger ved bruk av teknologi. Dette kan for eksempel vere å lage et produkt ved hjelp av 
-            laserkutting eller 3D-printing.
-            <br><br>
-            <strong>Forsker og felt</strong> jobber med
-            analyser, forskning av plankton og natur på Svalbard.
+            <br /><br />
+            <strong>Teknologi og innovasjon</strong> jobber med smarte løsninger
+            ved bruk av teknologi. Dette kan for eksempel vere å lage et produkt
+            ved hjelp av laserkutting eller 3D-printing. <br /><br />
+            <strong>Forsker og felt</strong> jobber med analyser, forskning av
+            plankton og natur på Svalbard.
           </p>
         </div>
       </div>
@@ -68,15 +71,13 @@
         <div class="question"><p>Hva slags prosjekter jobber vi med?</p></div>
         <div class="answer">
           <p>
-            <strong>Teknologi og Innovasjon:</strong> prototyper, programmering, 3D printing,
-            droner og smarte løsninger i forhold til bærekraftig teknologi.
-            <br/><br/>
-            <strong>Forskeri Felt:</strong> datainnsamling i naturen, målinger av miljøparametere,
-            analyser av arktiske forhold.
-            <br/><br/>
-            <strong>Ofte kombineres disse:</strong> for
-            eksempel kan dere lage sensorer som samler data i felt til egne
-            forskningsprosjekter.
+            <strong>Teknologi og Innovasjon:</strong> prototyper, programmering,
+            3D printing, droner og smarte løsninger i forhold til bærekraftig
+            teknologi. <br /><br />
+            <strong>Forskeri Felt:</strong> datainnsamling i naturen, målinger
+            av miljøparametere, analyser av arktiske forhold. <br /><br />
+            <strong>Ofte kombineres disse:</strong> for eksempel kan dere lage
+            sensorer som samler data i felt til egne forskningsprosjekter.
           </p>
         </div>
       </div>
@@ -84,10 +85,10 @@
         <div class="question"><p>Hvordan foregår feltarbeidet?</p></div>
         <div class="answer">
           <p>
-            Feltarbeid kan være alt fra korte turer i nærområdet til snøscooter-turer i arktiske omgivelser. 
-            Vi lærer sikkerhet, måleteknikker og
-            dokumentasjon, samtidig som teknologi brukes til å effektivisere og
-            forbedre forskningen.
+            Feltarbeid kan være alt fra korte turer i nærområdet til
+            snøscooter-turer i arktiske omgivelser. Vi lærer sikkerhet,
+            måleteknikker og dokumentasjon, samtidig som teknologi brukes til å
+            effektivisere og forbedre forskningen.
           </p>
         </div>
       </div>
@@ -97,7 +98,8 @@
           <p>
             Skolen stiller med det meste av utstyr som droner, sensorer,
             teknologi og måleinstrumenter. For feltarbeid anbefales varme klær,
-            støvler og personlig sikkerhetsutstyr. Anbefalt med egen PC <i>(Ikke absolutt nødvendig)</i>.
+            støvler og personlig sikkerhetsutstyr. Anbefalt med egen PC
+            <i>(Ikke absolutt nødvendig)</i>.
           </p>
         </div>
       </div>
@@ -235,9 +237,9 @@
     }
 
     .answer {
-      height: 0;
+      max-height: 0;
       overflow: hidden;
-      transition: height 0.3s ease;
+      transition: max-height 0.3s ease-out;
       padding-left: 50px;
       background-color: #4a6280;
     }
@@ -251,6 +253,14 @@
       transition: max-height 0.3s ease-in;
       max-height: 500px;
     }
+
+    @supports (-webkit-touch-callout: none) {
+      .answer.display {
+        height: -webkit-fit-content;
+        max-height: none;
+        transition: none;
+      }
+    }
   </style>
 
   <script>
@@ -258,21 +268,16 @@
     const question = document.querySelectorAll(".question");
     const answer = document.querySelectorAll(".answer");
 
-    for (let i = 0; i < question.length; i++) {
-      question[i].addEventListener("click", () => {
+    question.forEach((q, i) => {
+      q.addEventListener("click", () => {
         for (let j = 0; j < answer.length; j++) {
           if (j !== i) {
-            answer[j].style.height = "0";
+            answer[j].classList.remove("display");
           }
         }
-
-        if (answer[i].style.height === "0px" || !answer[i].style.height) {
-          answer[i].style.height = answer[i].scrollHeight + "px";
-        } else {
-          answer[i].style.height = "0";
-        }
+        answer[i].classList.toggle("display");
       });
-    }
+    });
   </script>
   <script src="meny.js"></script>
 </html>
