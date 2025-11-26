@@ -1,6 +1,16 @@
+:root{
+  --night:#0b1b2a;
+  --fjord:#0f3d5c;
+  --glacier:#7fd8ff;
+  --snow:#f6fbff;
+  --ice:#b7d1e2;
+  --accent:#00c0a3;
+  --font-primary:"Montserrat",sans-serif;
+  --font-secondary:"Space Grotesk",sans-serif;
+}
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #0f3d5c 0%, #07121c 60%);
+  background: radial-gradient(circle at top, var(--fjord) 0%, var(--night) 60%);
   min-height: 100%;
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
@@ -17,7 +27,7 @@ body {
 .navbar {
   padding: 10px 20px;
   display: flex;
-  background-color: #07121c;
+  background-color: var(--night);
   align-items: center;
   position: fixed;
   top: 0;
@@ -40,11 +50,11 @@ body {
 }
 #title-over {
   font-size: 1.3vw;
-  color: #7fd8ff;
+  color: var(--glacier);
 }
 #title-under {
   font-size: 2vw;
-  color: white;
+  color: var(--snow);
 }
 
 .menu-collapsed {
@@ -57,7 +67,7 @@ body {
 .menu-collapsed p {
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--snow);
   margin-right: 30px;
 }
 
@@ -73,12 +83,12 @@ body {
 
 .menu a {
   text-decoration: none;
-  color: #f6fbff;
+  color: var(--snow);
   font-weight: bold;
 }
 
 .menu a:last-child {
-  color: #00c0a3;
+  color: var(--accent);
 }
 
 @media (max-width: 800px) {
@@ -89,7 +99,7 @@ body {
     position: absolute;
     top: 107px;
     right: 10px;
-    background-color: #07121c;
+    background-color: var(--night);
     align-items: center;
   }
 
@@ -109,7 +119,7 @@ body {
 
   #title-over {
     font-size: 2vw;
-    color: #7fd8ff;
+    color: var(--glacier);
   }
   #title-under {
     font-size: 2.5vw;
@@ -122,19 +132,19 @@ body {
   display: flex;
 }
 
-a {
+nav a {
   position: relative;
   padding-bottom: 0.2rem;
 }
 
-a::after {
+nav a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: #f6fbff;
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s ease;
@@ -145,7 +155,7 @@ a:hover::after {
 
 footer {
   text-align: center;
-  color: white;
+  color: var(--snow);
 }
 
 /* scroll shrink navbar */
