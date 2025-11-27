@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./meny.css" />
-    <link rel="icon" type="image/x-icon" href="SFHS_logo.ico">
+    <link rel="icon" type="image/x-icon" href="SFHS_logo.ico" />
   </head>
   <body>
     <header class="navbar">
@@ -28,7 +28,11 @@
         <a href="spill.html">Spill</a>
         <a href="index.html#prosjekter">Prosjekter</a>
         <a href="faq.html">FAQ</a>
-        <a href="https://www.folkehogskole.no/skole/svalbard/soknad" target="_blank">Søk nå</a>
+        <a
+          href="https://www.folkehogskole.no/skole/svalbard/soknad"
+          target="_blank"
+          >Søk nå</a
+        >
       </nav>
     </header>
 
@@ -62,6 +66,13 @@
     let divs = [];
     gameStarted = false;
     score = 0;
+
+    document.addEventListener("keydown", () => {
+      if (!gameStarted) {
+        gameStarted = true;
+        document.body.style.overflow = "hidden"; // Disable scrolling
+      }
+    });
 
     for (let x = 0; x < 10; x++) {
       divs[x] = [];

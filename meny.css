@@ -178,6 +178,9 @@ footer {
     height: fit-content;
     width: fit-content;
   }
+  .menu-collapsed p {
+    margin-right: 40px;
+  }
 
   .menu a {
     padding: 0.5rem 2rem;
@@ -217,5 +220,8 @@ footer {
 
   .navbar.shrink #title-under {
     font-size: 3vw;
+  }
+  .menu-collapsed p {
+    margin-right: 30px;
   }
 }
