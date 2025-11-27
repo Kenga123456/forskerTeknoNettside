@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             images: []
         },
         tur3: {
-            title: "Overnatting med kunstklassen",
+            title: "Overnatting med kunst-klassen",
             description: "Årets første overnatting med kunst klassen i tillegg til årets første isbjørn Sammen med skolens kunst -og naturfoto-klasse tok vi en dagstur til skolens egen hytte. Der var det mulighet til enten å prøve seg på rypejakt med tur opp i fjellet eller en roligere tur med leking på den nye isen. Turen måtte avsluttes tidlig grunnet en varsling fra Sysselmesteren om isbjørn i området. Vi beveget oss da raskt tilbake mot skolen, men rakk heldigvis å få sett bjørnen gjennom kikkert. Deretter hadde vi en overnatting på NITO-hytta og Kirkehytta sammen med kunstklassen. Det ble god taco til middag og morsomme hytteleker utpå kvelden. En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
             images: []
         }
