@@ -68,12 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
         tur2: {
             title: "Besøk på KSAT",
             description: "Vi fikk komme på besøk til <a href=”https://www.ksat.no/”>KSAT</a> sin stasjon på Platåfjellet, kalt Svalsat. Der fikk vi en gjennomgang av hvordan de driver sin virksomhet, hvordan satellitter i seg selv har fungert opp gjennom tidene og hvordan de fungerer nå. Til slutt fikk vi lov til å komme inn i en av de ikoniske satellittene og se den fungere.",
-            images: ["images/tur2.jpg", "images/tur2-2.jpg", "images/tur2-3.jpg"]
+            images: []
         },
         tur3: {
-            title: "Fisketur",
-            description: "En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
-            images: ["images/tur3.jpg", "images/tur3-2.jpg", "images/tur3-3.jpg"]
+            title: "Overnatting med kunstklassen",
+            description: "Årets første overnatting med kunst klassen i tillegg til årets første isbjørn Sammen med skolens kunst -og naturfoto-klasse tok vi en dagstur til skolens egen hytte. Der var det mulighet til enten å prøve seg på rypejakt med tur opp i fjellet eller en roligere tur med leking på den nye isen. Turen måtte avsluttes tidlig grunnet en varsling fra Sysselmesteren om isbjørn i området. Vi beveget oss da raskt tilbake mot skolen, men rakk heldigvis å få sett bjørnen gjennom kikkert. Deretter hadde vi en overnatting på NITO-hytta og Kirkehytta sammen med kunstklassen. Det ble god taco til middag og morsomme hytteleker utpå kvelden. En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
+            images: []
         }
     };
 
