@@ -62,18 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const tripData = {
         tur1: {
             title: "Tur til varden",
-            description: "En spennende dag med feltarbeid ved innsjøen hvor vi samlet inn data, gjorde observasjoner og lærte om naturvitenskap i praksis.",
-            images: ["images/tur1.jpg", "images/tur1-2.jpg", "images/tur1-3.jpg"]
+            description: "20. August gikk vi vår første klasse tur. Vi gikk opp til Varden som er 300 meter over havet. På vei opp gikk vi oppover en grøft med masse fossiler av blant annet trær og blader. Vi tok en lunsjpause i en bunkers på var på veien opp som var litt trangt, men veldig koselig. Det var en veldig fin utsikt fra toppen og vi opplevde til og med noen snøflak når vi nådde toppen. ",
+            images:[]
         },
         tur2: {
             title: "Kirkehytta",
-            description: "Vi besøkte teknologisenteret hvor vi fikk se påkostet teknologi, møtte eksperter og deltok i spennende workshops.",
-            images: ["images/tur2.jpg", "images/tur2-2.jpg", "images/tur2-3.jpg"]
+            description: "24. – 26. september dro hele klassen på en overnattingstur til Kirkehytta. Vi kjørte inn til hytta som tok ca. et kvarter. 24. september gikk vi tur bort til gruve 5. 25. september gikk vi en litt lengre dagstur … . Det var en litt liten hytte, så det var ikke nok senger til alle, men noen sov på sofa eller på liggeunderlag på gulvet.  ",
+            images: ["../bilder/kirkehytta_hyttetur/gruve_5_kirkehytta.jpg"]
         },
         tur3: {
             title: "Andersenhytta",
-            description: "En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
-            images: ["images/tur3.jpg", "images/tur3-2.jpg", "images/tur3-3.jpg"]
+            description: "4. – 6. november hadde vi overnatting på Andersenhytta. Vi gikk fra skolen inn til hytta etter middag 3. november.  ",
+            images:  ["../bilder/Andersenhytta_hyttetur/veldig_fin_selfie_av_Erik.jpg", "../bilder/Andersenhytta_hyttetur/Magnus_nudes.jpg"]["images/tur3.jpg", "images/tur3-2.jpg", "images/tur3-3.jpg"]
         }
     };
 
