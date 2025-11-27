@@ -11,11 +11,12 @@
 body {
   margin: 0;
   background: radial-gradient(circle at top, var(--fjord) 0%, var(--night) 60%);
-  min-height: 100%;
+  min-height: 100vh;
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
   padding-top: 20vh;
   padding-bottom: 10vh;
+  color: var(--snow);
 }
 
 * {
@@ -122,6 +123,7 @@ a:hover::after {
 footer {
   text-align: center;
   color: var(--snow);
+  margin-top: 5%;
 }
 
 /* scroll shrink navbar */
