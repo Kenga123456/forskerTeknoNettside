@@ -15,3 +15,5 @@ window.addEventListener("scroll", () => {
     menu.classList.remove("shrink");
   }
 });
+
+
