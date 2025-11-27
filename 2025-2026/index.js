@@ -61,17 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trip modal data
     const tripData = {
         tur1: {
-            title: "Feltarbeid ved innsjøen",
+            title: "Tur til varden",
             description: "En spennende dag med feltarbeid ved innsjøen hvor vi samlet inn data, gjorde observasjoner og lærte om naturvitenskap i praksis.",
             images: ["images/tur1.jpg", "images/tur1-2.jpg", "images/tur1-3.jpg"]
         },
         tur2: {
-            title: "Besøk til teknologisenteret",
+            title: "Kirkehytta",
             description: "Vi besøkte teknologisenteret hvor vi fikk se påkostet teknologi, møtte eksperter og deltok i spennende workshops.",
             images: ["images/tur2.jpg", "images/tur2-2.jpg", "images/tur2-3.jpg"]
         },
         tur3: {
-            title: "Naturvandring",
+            title: "Andersenhytta",
             description: "En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
             images: ["images/tur3.jpg", "images/tur3-2.jpg", "images/tur3-3.jpg"]
         }
@@ -121,6 +121,4 @@ document.addEventListener('DOMContentLoaded', () => {
             closeTripModal();
         }
     });
-
-    // Kort-klikk ikke nødvendig for navigasjon (kort er <a>), men behold evt. ekstra oppførsel her.
 });
