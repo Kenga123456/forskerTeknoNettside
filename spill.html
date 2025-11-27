@@ -157,6 +157,42 @@
       if (gameStarted) updatePlayer();
     }, 150);
 
+    // --- MOBILE SWIPE CONTROLS ---
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    document.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    });
+
+    document.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+
+      const dx = touchEndX - touchStartX;
+      const dy = touchEndY - touchStartY;
+
+      // ignore tiny movements
+      if (Math.abs(dx) < 25 && Math.abs(dy) < 25) return;
+
+      // horizontal swipe
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 0 && state !== "ArrowLeft") state = "ArrowRight";
+        else if (dx < 0 && state !== "ArrowRight") state = "ArrowLeft";
+      }
+      // vertical swipe
+      else {
+        if (dy > 0 && state !== "ArrowUp") state = "ArrowDown";
+        else if (dy < 0 && state !== "ArrowDown") state = "ArrowUp";
+      }
+
+      gameStarted = true;
+      document.body.style.overflow = "hidden"; // disable scrolling while playing
+    });
+
     function updatePlayer() {
       //gjør at alt følger hodet
       for (let i = playerPositions.length - 1; i > 0; i--) {
