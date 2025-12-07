@@ -144,6 +144,7 @@ body{
 }
 .sitat{
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 3rem;
     color: var(--ice);
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
