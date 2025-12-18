@@ -7,10 +7,6 @@ body{
     border-radius: 20px;
     padding: 3%;
 }
-.note{
-    font-size: 70%;
-    font-style: italic;
-}
 .info{
     display: flex;
     justify-content: space-around;
@@ -150,6 +146,10 @@ body{
     font-size: 200%;
     color: var(--ice);
     font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.note{
+    font-size: 70%;
+    font-style: italic;
 }
 
 @media (max-width:600px) {
