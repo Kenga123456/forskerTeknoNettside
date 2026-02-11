@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tur3: {
             title: "Andersenhytta",
             description: "4. – 6. november hadde vi overnatting på Andersenhytta. Vi gikk fra skolen inn til hytta etter middag 3. november.  ",
-            images:  ["../bilder/Andersenhytta_hyttetur/veldig_fin_selfie_av_Erik.jpg", "../bilder/Andersenhytta_hyttetur/Magnus_nudes.jpg"]["images/tur3.jpg", "images/tur3-2.jpg", "images/tur3-3.jpg"]
+            images:  ["./bilder/andersenhytta_hyttetur/veldig_fin_selfie_av_Erik.jpg", "./bilder/andersenhytta_hyttetur/Magnus_nudes.jpg"]["images/tur3.jpg", "images/tur3-2.jpg", "images/tur3-3.jpg"]
         }
     };
 

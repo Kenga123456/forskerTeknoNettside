@@ -133,6 +133,7 @@ body{
     align-items: center;
     justify-content: start;
     min-height: 500px;
+    background-color: rgba(15, 61, 92);
 }
 
 .compare-con>div>img{
