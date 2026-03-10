@@ -63,12 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
         tur1: {
             title: "Tur til varden",
             description: "20. August gikk vi vår første klasse tur. Vi gikk opp til Varden som er 300 meter over havet. På vei opp gikk vi oppover en grøft med masse fossiler av blant annet trær og blader. Vi tok en lunsjpause i en bunkers på var på veien opp som var litt trangt, men veldig koselig. Det var en veldig fin utsikt fra toppen og vi opplevde til og med noen snøflak når vi nådde toppen. ",
-            images:[]
+            images: ["../bilder/varden_tur/klassebilde_på_varden.png", "../bilder/varden_tur/grøft_til_varden.jpg", "../bilder/varden_tur/utsikt_fra_varden.jpg", "../bilder/varden_tur/reinsdyr_til_varden.jpg"]
         },
         tur2: {
             title: "Kirkehytta",
             description: "24. – 26. september dro hele klassen på en overnattingstur til Kirkehytta. Vi kjørte inn til hytta som tok ca. et kvarter. 24. september gikk vi tur bort til gruve 5. 25. september gikk vi en litt lengre dagstur … . Det var en litt liten hytte, så det var ikke nok senger til alle, men noen sov på sofa eller på liggeunderlag på gulvet.  ",
-            images: ["../bilder/kirkehytta_hyttetur/gruve_5_kirkehytta.jpg"]
+            images: ["../bilder/kirkehytta_hyttetur/gruve_5_kirkehytta.jpg","../bilder/kirkehytta_hyttetur/kirkehytta_bålkos.jpg"]
         },
         tur3: {
             title: "Andersenhytta",
