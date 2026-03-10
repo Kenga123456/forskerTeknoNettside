@@ -22,7 +22,7 @@ jobs:
         run: npm install axios cheerio
 
       - name: Run scraper
-        run: node scrape.js
+        run: node 2025-2026/scrape.js
 
       - name: Commit and push changes
         run: |
