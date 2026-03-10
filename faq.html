@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,7 +36,12 @@
       </nav>
     </header>
 
-    <h1>Ofte stilte spørsmål</h1>
+    <h1>FAQ</h1>
+    <div class="faq-info-tekst">
+      Her finner du svarene til de fleste spørsmålene du kan ha. Vi anbefaler
+      også å gå til skolens nettside som også har en egen side for ofte stilte
+      spørsmål. Hvis du har noe spørsmål som ikke finnes her, kan du kontakte:
+    </div>
     <div class="faq-container">
       <div class="question-container">
         <div class="question"><p>Hva lærer man på linjene?</p></div>
@@ -195,7 +200,7 @@
   </body>
   <footer>
     <p>2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire</p>
-</footer>
+  </footer>
   <style>
     h1 {
       text-align: center;
@@ -205,45 +210,47 @@
 
     .faq-container {
       width: 60%;
-      margin: 20px auto;
+      margin: 50px 0;
+      padding-left: 50px;
       display: flex;
       flex-direction: column;
-      border: 1px solid white;
+      font-size: large;
+    }
+
+    .faq-info-tekst {
+      width: 60%;
+      margin: 50px auto;
+      padding-left: 10px;
+      border-left: 6px solid white;
+      font-size: 16px;
     }
 
     .question-container > * {
-      background-color: rgb(84, 84, 84);
-      border: 1px solid black;
-
-      display: flex; /* For å få teksten til å sentrere skikkelig */
-      align-items: center;
       padding-left: 30px;
     }
 
     .question {
       height: 40px;
-      background-color: #374e69;
       color: #e8f1f5;
       height: fit-content;
       padding: 10px;
+      font-size: larger;
     }
 
     .question:hover {
-      background-color: #2b3b4d;
+      color: #cebbc9;
     }
 
     .question > p {
       font-weight: bold;
       margin: 0 auto;
-      text-align: center;
     }
 
     .answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease-out;
       padding-left: 10px;
-      background-color: #4a6280;
+      border-bottom: 2px solid gray;
     }
 
     .answer > p {
@@ -252,7 +259,6 @@
     }
 
     .answer.display {
-      transition: max-height 0.3s ease-in;
       max-height: 500px;
     }
 
@@ -283,11 +289,6 @@
 
     question.forEach((q, i) => {
       q.addEventListener("click", () => {
-        for (let j = 0; j < answer.length; j++) {
-          if (j !== i) {
-            answer[j].classList.remove("display");
-          }
-        }
         answer[i].classList.toggle("display");
       });
     });
