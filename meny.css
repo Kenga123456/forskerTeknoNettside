@@ -15,7 +15,7 @@ body {
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
   padding-top: 20vh;
-  padding-bottom: 10vh;
+  padding-bottom: 0;
   color: var(--snow);
 }
 
@@ -136,7 +136,9 @@ footer {
 
 .navbar {
   height: 16vh;
-  transition: padding 0.25s ease, background-color 0.25s ease;
+  transition:
+    padding 0.25s ease,
+    background-color 0.25s ease;
 }
 
 .navbar.shrink {
