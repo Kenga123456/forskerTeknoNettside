@@ -38,6 +38,8 @@
 
     <h1>FAQ</h1>
     <div class="faq-info-tekst">
+      <div class="bold-header">Spørsmål:</div>
+
       Her finner du svarene til de fleste spørsmålene du kan ha. Vi anbefaler
       også å gå til skolens nettside som også har en egen side for ofte stilte
       spørsmål. Hvis du har noe spørsmål som ikke finnes her, kan du kontakte:
@@ -219,10 +221,16 @@
 
     .faq-info-tekst {
       width: 60%;
-      margin: 50px auto;
+      margin: 50px 50px;
       padding-left: 10px;
       border-left: 6px solid white;
       font-size: 16px;
+    }
+
+    .bold-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 18px;
     }
 
     .question-container > * {
@@ -265,6 +273,10 @@
     @media screen and (max-width: 640px) {
       .faq-container {
         width: 85%;
+      }
+
+      .faq-info-tekst {
+        width: 80%;
       }
       .answer.display {
         height: fit-content;
