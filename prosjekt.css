@@ -7,6 +7,9 @@ body{
     border-radius: 20px;
     padding: 3%;
 }
+.boks-con>img{
+    width: 80%;
+}
 .info{
     display: flex;
     justify-content: space-around;
@@ -107,11 +110,13 @@ body{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    align-items: center;
     
 }
 .prosjekt-bilder>img{
-    width: 40%;
+    width: 30%;
     margin-bottom:7%;
+    height: fit-content;
 }
 .compare-con{
     justify-content: space-around;
