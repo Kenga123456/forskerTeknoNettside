@@ -123,9 +123,7 @@ a:hover::after{
     transition: border-bottom 0.3s ease, color 0.3s ease;
     box-shadow: none;
 }
-.filter-btn:hover {
-    border-bottom-color: var(--accent);
-}
+
 .filter-btn.active {
     border-bottom-color: var(--accent);
     color: var(--glacier);
