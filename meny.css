@@ -15,7 +15,7 @@ body {
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
   padding-top: 20vh;
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
   color: var(--snow);
 }
 
@@ -127,8 +127,12 @@ footer {
   color: var(--snow);
   height: auto;
   padding: 1.5rem 1rem;
-  background: linear-gradient(180deg, rgba(11,27,42,0.9), rgba(15,61,92,0.95));
-  border-top: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 27, 42, 0.9),
+    rgba(15, 61, 92, 0.95)
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer .footer-text {
@@ -148,19 +152,21 @@ footer .social-links {
 
 footer .social-links a {
   color: var(--snow);
-  background: rgba(0,192,163,0.2);
-  border: 1px solid rgba(0,192,163,0.7);
+  background: rgba(0, 192, 163, 0.2);
+  border: 1px solid rgba(0, 192, 163, 0.7);
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
   min-width: 140px;
   text-align: center;
 }
 
 footer .social-links a:hover {
-  background: rgba(0,192,163,0.4);
+  background: rgba(0, 192, 163, 0.4);
   transform: translateY(-2px);
 }
 
