@@ -7,6 +7,9 @@ body{
     border-radius: 20px;
     padding: 3%;
 }
+.boks-con>img{
+    width: 80%;
+}
 .info{
     display: flex;
     justify-content: space-around;
