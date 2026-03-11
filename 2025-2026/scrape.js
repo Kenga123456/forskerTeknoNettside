@@ -29,10 +29,11 @@ async function main() {
 
   const data = await res.json();
 
-  for (const img of data) {
+  for (let i = 0; i < data.length; i++) {
+    const img = data[i];
     const imageRes = await fetch(img.url);
     const buffer = await imageRes.arrayBuffer();
-    const filename = img.timestamp.replace(/[:]/g, "-") + ".jpg";
+    const filename = `${i}.jpg`; // just 0.jpg, 1.jpg, 2.jpg...
     fs.writeFileSync("telenor-images/" + filename, Buffer.from(buffer));
     console.log("Saved", filename);
   }
