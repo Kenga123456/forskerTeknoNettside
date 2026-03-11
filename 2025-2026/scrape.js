@@ -33,7 +33,7 @@ async function main() {
     const imageRes = await fetch(img.url);
     const buffer = await imageRes.arrayBuffer();
     const filename = img.timestamp.replace(/[:]/g, "-") + ".jpg";
-    fs.writeFileSync("telenor/images/" + filename, Buffer.from(buffer));
+    fs.writeFileSync("telenor-images/" + filename, Buffer.from(buffer));
     console.log("Saved", filename);
   }
 }
