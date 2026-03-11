@@ -1,0 +1,40 @@
+name: Daily Image Scraper
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch: # allows manual triggering
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install node-fetch@3
+
+      - name: Ensure telenor-images folder exists
+        run: mkdir -p telenor-images
+
+      - name: Run scraper
+        env:
+          TILSIG_USER: ${{ secrets.TILSIG_USER }}
+          TILSIG_PASS: ${{ secrets.TILSIG_PASS }}
+        run: node scrape.js
+
+      - name: Commit images
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "actions@github.com"
+          git add telenor-images/
+          git commit -m "Update images $(date +'%Y-%m-%d')"
+          git push
+        continue-on-error: true # avoids failing if nothing changed
