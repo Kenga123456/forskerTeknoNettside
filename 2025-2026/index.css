@@ -125,7 +125,6 @@ a:hover::after{
 }
 
 .filter-btn.active {
-    border-bottom-color: var(--accent);
     color: var(--glacier);
 }
 
