@@ -1,6 +1,17 @@
 import fetch from "node-fetch";
 import fs from "fs";
 
+const folder = "telenor-images";
+
+if (!fs.existsSync(folder)) {
+  fs.mkdirSync(folder);
+} else {
+  const files = fs.readdirSync(folder);
+  for (const file of files) {
+    fs.unlinkSync(`${folder}/${file}`);
+  }
+}
+
 async function login() {
   const res = await fetch(
     "https://api.tilsig.com/v1/authentication/authenticate",
