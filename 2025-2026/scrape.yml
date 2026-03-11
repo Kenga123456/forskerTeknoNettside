@@ -28,7 +28,7 @@ jobs:
         env:
           TILSIG_USER: ${{ secrets.TILSIG_USER }}
           TILSIG_PASS: ${{ secrets.TILSIG_PASS }}
-        run: node scrape.js
+        run: node 2025-2026/scrape.js
 
       - name: Commit images
         run: |
