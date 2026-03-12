@@ -60,47 +60,28 @@ body {
 }
 
 .menu-collapsed {
-  display: block;
+  display: none;
   font-weight: bold;
   cursor: pointer;
-  margin-left: auto;
-  margin-right: 1rem;
-  padding: 0.4rem 0.75rem;
-  background: transparent;
-  border: none;
-  z-index: 1200;
-  position: relative;
-  pointer-events: auto;
-  touch-action: manipulation;
+  margin-left: 80px;
 }
 
 .menu-collapsed p {
   display: flex;
   align-items: center;
   color: var(--snow);
-  margin: 0;
-  user-select: none;
+  padding-right: 60px;
 }
 
 .menu {
-  display: none;
+  display: flex;
   gap: 45px;
   padding: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
-  transition: visibility 0.2s ease, opacity 0.2s ease;
-  visibility: hidden;
-  opacity: 0;
 }
-
-.menu.show-menu {
-  display: flex;
-  visibility: visible;
-  opacity: 1;
-}
-
 
 .menu a {
   text-decoration: none;
@@ -110,7 +91,6 @@ body {
 
 .menu a:last-child {
   color: var(--accent);
-  min-width: 15%;
   min-width: 15%;
 }
 
@@ -235,23 +215,6 @@ footer .social-links a:hover {
     right: 10px;
     background-color: var(--night);
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.5rem;
-    width: calc(100vw - 2rem);
-    max-width: 340px;
-    z-index: 1100;
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  .menu.show-menu {
-    display: flex;
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .menu.show-menu {
-    display: flex;
   }
 
   .menu.shrink {
@@ -336,9 +299,5 @@ footer .social-links a:hover {
       background 0.2s ease;
     min-width: 3vw;
     text-align: center;
-  }  
-}
-
-.redirect{
-    color: var(--accent);
+  }
 }
