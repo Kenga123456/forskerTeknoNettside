@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import fs from "fs";
 
 const folder = "telenor-images";
-const tempFile = "2025-2026/tempData.json";
+const tempFile = "2025-2026/tempdata.json";
 
 if (!fs.existsSync(folder)) {
   fs.mkdirSync(folder);

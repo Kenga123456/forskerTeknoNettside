@@ -52,6 +52,16 @@
   </footer>
 
     <script>
+      const fs = require("fs");
+
+      const data = JSON.parse(fs.readFileSync("tempdata.json", "utf-8"));
+
+      const tempsAndTimes = data.map(entry => ({
+        temperature: entry.value,
+        time: entry.timestamp
+      }));
+
+      console.log(tempsAndTimes);
       imagesContainerEl = document.querySelector("#images-container");
       for (let i = 0; i < 40; i++) {
         imgEl = document.createElement("img");
