@@ -223,8 +223,7 @@ body{
     }
     
     .prosjekt-bilder>img{
-        height: 20vh;
-        width: fit-content;
+        width: 80vw;
         margin-bottom:7%;
     }
 
