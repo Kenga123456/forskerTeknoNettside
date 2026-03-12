@@ -12,6 +12,13 @@ if (!fs.existsSync(folder)) {
   }
 }
 
+if (fs.existsSync(tempFile)) {
+  fs.writeFileSync(tempFile, "[]");
+} else {
+  fs.mkdirSync("2025-2026", { recursive: true });
+  fs.writeFileSync(tempFile, "[]");
+}
+
 async function login() {
   const res = await fetch(
     "https://api.tilsig.com/v1/authentication/authenticate",
