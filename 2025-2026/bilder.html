@@ -58,24 +58,20 @@
     fetch("tempdata.json")
       .then(response => response.json())
       .then(data => {
-        // Map the data
         const temperatureData = data.map(entry => ({
           value: entry.value,
           timestamp: entry.timestamp
         }));
 
-        // Sort by time
         temperatureData.sort(
           (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
         );
 
-        // Prepare labels and values for the chart
         const labels = temperatureData.map(d =>
           new Date(d.timestamp).toLocaleString()
         );
         const values = temperatureData.map(d => d.value);
 
-        // Create the chart
         const ctx = document.getElementById("tempChart");
         const tempChart = new Chart(ctx, {
           type: "line",
@@ -83,7 +79,7 @@
             labels: labels,
             datasets: [
               {
-                label: "Temperature (°C)",
+                label: "Temperatur (°C)",
                 data: values,
                 fill: false,
                 borderColor: "blue",
@@ -98,12 +94,12 @@
             scales: {
               x: {
                 display: true,
-                title: { display: true, text: "Timestamp" },
+                title: { display: true, text: "Dato" },
                 ticks: { maxRotation: 90, minRotation: 45 }
               },
               y: {
                 display: true,
-                title: { display: true, text: "Temperature (°C)" }
+                title: { display: true, text: "Temperatur (°C)" }
               }
             },
             plugins: {
@@ -148,9 +144,11 @@
     }
 
     canvas {
-        background: #f5f5f5;
+        background: hsl(167, 35%, 65%);
         border: 1px solid #ccc;
         padding: 20px;
+        width: 60%;
+        margin: 0 auto;
       }
   </style>
   <script src="../meny.js"></script>
