@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tur1: {
             title: "Hearts In The Ice",
             description: 'Klassen ble invitert til å bli med <a href="https://www.heartsintheice.com/">"Hearts In The Ice"</a> på en båttokt rundt sørsiden av Svalbard. Formålet med tokten var å samle klimaaktivister fra hele verden og sammen se på konsekvensene av klimaendringene. Disse er da enda tydeligere på Svalbard. Hver kveld hadde vi diskusjonspaneler med eksperter, og på dagene så vi på både hvalfangsthistorie og isbreer. Vi fikk til slutt også besøke hytta “Bamsebu” som Hilde Fålun Strøm og Sunniva Sorby, stifterne av HITI, overvintret på i 9 måneder.',
-            images: ["../bilder/HITI_3.jpg", "../bilder/HITI_4.jpg", "../bilder/HITI_5.jpg", "../bilder/HITI_6.jpg"]
+            images: ["./bilder/prosjekt_HITI/HITI_3.jpg", "./bilder/prosjekt_HITI/HITI_4.jpg", "./bilder/prosjekt_HITI/HITI_5.jpg", "./bilder/prosjekt_HITI/HITI_6.jpg"]
         },
         tur2: {
             title: "Besøk på KSAT",
