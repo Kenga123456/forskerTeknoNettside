@@ -52,16 +52,23 @@
   </footer>
 
     <script>
-      const fs = require("fs");
-      console.log("test");
-      const data = JSON.parse(fs.readFileSync("tempdata.json", "utf-8"));
-
+    fetch("../tempdata.json")
+    .then(response => response.json())
+    .then(data => {
       const tempsAndTimes = data.map(entry => ({
         temperature: entry.value,
         time: entry.timestamp
       }));
-
       console.log(tempsAndTimes);
+
+      const imagesContainerEl = document.querySelector("#images-container");
+      for (let i = 0; i < 40; i++) {
+        const imgEl = document.createElement("img");
+        imgEl.src = `../telenor-images/${i}.jpg`;
+        imagesContainerEl.appendChild(imgEl);
+      }
+    })
+    .catch(err => console.error("Failed to fetch JSON:", err));
       imagesContainerEl = document.querySelector("#images-container");
       for (let i = 0; i < 40; i++) {
         imgEl = document.createElement("img");
