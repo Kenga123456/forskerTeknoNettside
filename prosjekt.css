@@ -224,6 +224,7 @@ body{
     
     .prosjekt-bilder>img{
         width: 80vw;
+        height: fit-content;
         margin-bottom:7%;
     }
 
