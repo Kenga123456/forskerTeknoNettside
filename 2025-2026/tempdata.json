@@ -1,0 +1,13 @@
+{
+  "stationId": 0,
+  "dataSeriesId": 0,
+  "sequence": 0,
+  "measurementTypeId": 0,
+  "measurementUnitId": 0,
+  "measurementCategoryId": 0,
+  "category": null,
+  "type": null,
+  "unit": null,
+  "dataSeriesName": null,
+  "measurements": []
+}
