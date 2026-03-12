@@ -58,7 +58,7 @@ async function main() {
   const to = now.toISOString();
 
   const tempRes = await fetch(
-    `https://api.tilsig.com/GET v1/measurement/raw?sensorId=${SENSOR_ID}&from=${from}&to=${to}`,
+    `https://api.tilsig.com/v1/measurement/raw?sensorId=${SENSOR_ID}&from=${from}&to=${to}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
