@@ -1,8 +1,24 @@
 function getSiteBaseUrl() {
+  // When hosted in a subfolder (ex: GitHub Pages), links must keep that folder.
+  // Derive a stable "site root" from the current URL and strip known year-subfolders.
+  const { origin, pathname } = window.location;
+  const knownSubfolders = ["/2025-2026/", "/2024-2025/"];
+
+  for (const sub of knownSubfolders) {
+    const idx = pathname.indexOf(sub);
+    if (idx !== -1) {
+      const basePath = `${pathname.slice(0, idx)}/`;
+      return new URL(basePath, origin);
+    }
+  }
+
+  // Fallback: use the directory where meny.js is loaded from.
   const currentScript =
     document.currentScript || document.querySelector('script[src$="meny.js"]');
-  if (!currentScript) return new URL("./", window.location.href);
-  return new URL("./", currentScript.src);
+  if (currentScript?.src) return new URL("./", currentScript.src);
+
+  // Final fallback: current document directory.
+  return new URL("./", window.location.href);
 }
 
 const siteBaseUrl = getSiteBaseUrl();
@@ -12,7 +28,7 @@ const href = (path) => new URL(path, siteBaseUrl).href;
 document.querySelector("header").classList.add("navbar");
 document.querySelector("header").innerHTML = (`
   <a href="${href("index.html")}">
-        <img src="${href("../bilder/SFHS_logo.png")}" alt="" id="logo" />
+        <img src="${href("bilder/SFHS_logo.png")}" alt="" id="logo" />
       </a>
       <div class="title">
         <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
