@@ -137,7 +137,7 @@ footer {
 
 footer .footer-text {
   max-width: 900px;
-  margin: 0 100px;
+  margin: 0;
   line-height: 1.6;
   color: var(--snow);
   font-size: 0.95rem;
