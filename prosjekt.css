@@ -220,4 +220,11 @@ body{
         font-size: 1.2rem;
         color: var(--ice);
         font-family:Georgia, 'Times New Roman', Times, serif;
-}}
+    }
+    .prosjekt-bilder>img{
+        height: .5vh;
+        margin-bottom:7%;
+        height: fit-content;
+    }
+
+}
