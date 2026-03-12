@@ -53,7 +53,7 @@
 
     <script>
       const fs = require("fs");
-
+      console.log("test");
       const data = JSON.parse(fs.readFileSync("tempdata.json", "utf-8"));
 
       const tempsAndTimes = data.map(entry => ({
