@@ -48,6 +48,18 @@ async function main() {
     fs.writeFileSync("telenor-images/" + filename, Buffer.from(buffer));
     console.log("Saved", filename);
   }
+  const tempRes = await fetch(
+    "https://api.tilsig.com/v1/dataseries/by-dataseries-id/11810",
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    },
+  );
+  const tempData = await tempRes.json();
+  console.log(tempData.length);
+  fs.writeFileSync(
+    "2025-2026/tempdata.json",
+    JSON.stringify(tempData, null, 2),
+  );
 }
 
 main();
