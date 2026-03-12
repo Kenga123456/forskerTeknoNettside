@@ -97,8 +97,9 @@ body{
     height: 100%;
 }
 .divided-con>div>img{
-    width: 100%;
-    height: fit-content;
+    max-width: 40vw;
+    height: auto;
+    width: auto;
 }
 .divider{
     margin: 2%;
@@ -227,12 +228,6 @@ body{
         width: auto;
         height: auto;
         margin-bottom:7%;
-    }
-
-    .divided-con>div>img{
-        max-width: 40vw;
-        height: auto;
-        width: auto;
     }
 
 }
