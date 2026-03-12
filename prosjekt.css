@@ -229,4 +229,10 @@ body{
         margin-bottom:7%;
     }
 
+    .divided-con>div>img{
+        max-width: 50vw;
+        height: auto;
+        width: auto;
+    }
+
 }
