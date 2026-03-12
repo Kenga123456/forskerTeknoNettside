@@ -277,4 +277,27 @@ footer .social-links a:hover {
     text-align: center;
     margin-left: -60px;
   }
+
+  footer .footer-text {
+    max-width: 900px;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--snow);
+    font-size: 2vw;
+  }
+
+  footer .social-links a {
+    color: var(--snow);
+    background: rgba(0, 192, 163, 0.2);
+    border: 1px solid rgba(0, 192, 163, 0.7);
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    font-size: 3vw;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+    min-width: 3vw;
+    text-align: center;
+  }  
 }
