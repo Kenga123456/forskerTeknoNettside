@@ -12,7 +12,7 @@ const href = (path) => new URL(path, siteBaseUrl).href;
 document.querySelector("header").classList.add("navbar");
 document.querySelector("header").innerHTML = (`
   <a href="${href("index.html")}">
-        <img src="${href("bilder/SFHS_logo.png")}" alt="" id="logo" />
+        <img src="${href("../bilder/SFHS_logo.png")}" alt="" id="logo" />
       </a>
       <div class="title">
         <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
