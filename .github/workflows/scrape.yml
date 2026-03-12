@@ -30,11 +30,11 @@ jobs:
           TILSIG_PASS: ${{ secrets.TILSIG_PASS }}
         run: node 2025-2026/scrape.js
 
-      - name: Commit images
+      - name: Commit images and temp data
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "actions@github.com"
           git add telenor-images/
-          git commit -m "Update images $(date +'%Y-%m-%d')"
+          git add 2025-2026/tempdata.json
+          git commit -m "Update images and temp data $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
-        continue-on-error: true # avoids failing if nothing changed
