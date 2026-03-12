@@ -2,6 +2,7 @@ import fetch from "node-fetch";
 import fs from "fs";
 
 const folder = "telenor-images";
+const tempFile = "2025-2026/tempdata.json";
 
 if (!fs.existsSync(folder)) {
   fs.mkdirSync(folder);
@@ -10,6 +11,13 @@ if (!fs.existsSync(folder)) {
   for (const file of files) {
     fs.unlinkSync(`${folder}/${file}`);
   }
+}
+
+if (fs.existsSync(tempFile)) {
+  fs.writeFileSync(tempFile, "[]");
+} else {
+  fs.mkdirSync("2025-2026", { recursive: true });
+  fs.writeFileSync(tempFile, "[]");
 }
 
 async function login() {
@@ -52,13 +60,13 @@ async function main() {
   const SENSOR_ID = 11810;
 
   const now = new Date();
-  const sevenDaysAgo = new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000);
+  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
   const from = sevenDaysAgo.toISOString();
   const to = now.toISOString();
 
   const tempRes = await fetch(
-    `https://api.tilsig.com/GET v1/measurement/raw?sensorId=${SENSOR_ID}&from=${from}&to=${to}`,
+    `https://api.tilsig.com/v1/measurement/raw?sensorId=${SENSOR_ID}&from=${from}&to=${to}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
