@@ -329,3 +329,7 @@ footer .social-links a:hover {
   color: var(--glacier);
   margin-bottom: 0.5rem;
 }
+.fix{
+  color: var(--snow);
+  text-decoration: none;
+}
