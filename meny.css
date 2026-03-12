@@ -204,7 +204,9 @@ footer .social-links a:hover {
 .menu {
   transition: top 0.25s ease-in-out;
 }
-
+.redirect{
+  color: var(--accent);
+}
 @media (max-width: 800px) {
   .menu {
     flex-direction: column;
