@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="no">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="../meny.css" />
     <link rel="icon" type="image/x-icon" href="../SFHS_logo.ico" />
@@ -27,7 +30,11 @@
         <a href="../spill.html">Spill</a>
         <a href="../index.html#prosjekter">Prosjekter</a>
         <a href="../faq.html">FAQ</a>
-        <a href="https://www.folkehogskole.no/skole/svalbard/soknad" target="_blank">Søk nå</a>
+        <a
+          href="https://www.folkehogskole.no/skole/svalbard/soknad"
+          target="_blank"
+          >Søk nå</a
+        >
       </nav>
     </header>
 
@@ -36,29 +43,39 @@
         <h2>Velkommen til Forsker & Tekno 25/26</h2>
         <p>
           Her er turer og prosjekter vi i forsker & tekno klassen har gjort i
-          skoleåret 2025-2026. Klikk på turene for å se mer informasjon og bilder fra
-          turene. og du kan lese mer om prosjektene vi har jobbet med ved å klikke på
-          prosjektene nederst på siden.
+          skoleåret 2025-2026. Klikk på turene for å se mer informasjon og
+          bilder fra turene. og du kan lese mer om prosjektene vi har jobbet med
+          ved å klikke på prosjektene nederst på siden.
         </p>
       </section>
 
       <section class="trips-section">
         <h2>Turer og ekskursjoner</h2>
         <div class="trips-container">
-
           <!--Tur til varden-->
           <button class="trip-card" data-trip="tur1">
-            <img src="./bilder/turer/varden_tur/klassebilde_på_varden.png" alt="Tur 1" class="trip-card-image" />
+            <img
+              src="./bilder/turer/varden_tur/klassebilde_på_varden.png"
+              alt="Tur 1"
+              class="trip-card-image"
+            />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
               <h2>Tur til varden</h2>
-              <p>Første tur med klassen på starten av året som var en fin mulighet for å bli bedre kjent</p>
+              <p>
+                Første tur med klassen på starten av året som var en fin
+                mulighet for å bli bedre kjent
+              </p>
             </div>
           </button>
 
           <!--Kirkehytta-->
           <button class="trip-card" data-trip="tur2">
-            <img src="./bilder/turer/kirkehytta_hyttetur/kirkehytta_vindu.jpg" alt="Tur 2" class="trip-card-image" />
+            <img
+              src="./bilder/turer/kirkehytta_hyttetur/kirkehytta_vindu.jpg"
+              alt="Tur 2"
+              class="trip-card-image"
+            />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
               <h2>Kirkehytta</h2>
@@ -68,7 +85,11 @@
 
           <!--Andersenhytta-->
           <button class="trip-card" data-trip="tur3">
-            <img src="./bilder/turer/andersenhytta_hyttetur/Andersenhytta.png" alt="Tur 3" class="trip-card-image" />
+            <img
+              src="./bilder/turer/andersenhytta_hyttetur/Andersenhytta.png"
+              alt="Tur 3"
+              class="trip-card-image"
+            />
             <div class="trip-card-content">
               <span class="category-badge tur">Tur</span>
               <h2>Andersenhytta</h2>
@@ -92,7 +113,9 @@
       </div>
 
       <section class="filter-section">
-        <button class="filter-btn active" data-filter="all">Alle Prosjekter</button>
+        <button class="filter-btn active" data-filter="all">
+          Alle Prosjekter
+        </button>
         <button class="filter-btn" data-filter="forsker">Forsker</button>
         <button class="filter-btn" data-filter="tekno">Tekno</button>
       </section>
@@ -100,31 +123,61 @@
       <section class="projects-section">
         <h2>Prosjekter</h2>
         <div class="projects-container">
-
           <!--Ammunisjonsboks prosjektet-->
-          <a href="./prosjekt-ammoboks.html" class="project-card" data-category="tekno">
-            <img src="./bilder/prosjekt_ammoboks/3dammoboks1-removebg-preview.png" alt="Ammunisjon boks" class="project-card-image"/>
+          <a
+            href="./prosjekt-ammoboks.html"
+            class="project-card"
+            data-category="tekno"
+          >
+            <img
+              src="./bilder/prosjekt_ammoboks/3dammoboks1-removebg-preview.png"
+              alt="Ammunisjon boks"
+              class="project-card-image"
+            />
             <div class="project-card-content">
               <span class="category-badge tekno">tekno</span>
               <h2>Ammunisjonboks</h2>
-              <p>I dette prosjektet hadde vi i tekno oppgave med å lage bokser til å holde ammunisjon på tur</p>
+              <p>
+                I dette prosjektet hadde vi i tekno oppgave med å lage bokser
+                til å holde ammunisjon på tur
+              </p>
             </div>
           </a>
 
           <!--Sammarbeid med telenor -->
-          <a href="./bilder.html" class="project-card" data-category="tekno" data-category2="forsker">
-            <img src="./bilder/prosjekt_telenor/avansert_ting.jpg" alt="Prosjekt 2" class="project-card-image" />
+          <a
+            href="./bilder.html"
+            class="project-card"
+            data-category="tekno"
+            data-category2="forsker"
+          >
+            <img
+              src="./bilder/prosjekt_telenor/avansert_ting.jpg"
+              alt="Prosjekt 2"
+              class="project-card-image"
+            />
             <div class="project-card-content">
               <span class="category-badge tekno">Tekno</span>
               <span class="category-badge forsker">Forsker</span>
               <h2>Sammarbeidsprosjekt med Telenor</h2>
-              <p>Vi fikk et kamera som tar bilde en gang om dagen og vi har laget en nettside som viser bildene.</p>
+              <p>
+                Vi fikk et kamera som tar bilde en gang om dagen og vi har laget
+                en nettside som viser bildene.
+              </p>
             </div>
           </a>
 
-        <!--Nettside-->
-          <a href="./prosjekt-nettside.html" class="project-card" data-category="tekno">
-            <img src="./bilder/prosjekt_nettside/Kevin_lager_nettside.jpg" alt="Prosjekt 3" class="project-card-image" />
+          <!--Nettside-->
+          <a
+            href="./prosjekt-nettside.html"
+            class="project-card"
+            data-category="tekno"
+          >
+            <img
+              src="./bilder/prosjekt_nettside/Kevin_lager_nettside.jpg"
+              alt="Prosjekt 3"
+              class="project-card-image"
+            />
             <div class="project-card-content">
               <span class="category-badge tekno">Tekno</span>
               <h2>Nettside</h2>
@@ -133,18 +186,37 @@
           </a>
 
           <!--Plankton-->
-          <a href="./prosjekt-plankton.html" class="project-card" data-category="forsker">
-            <img src="./bilder/prosjekt_plankton/planktonprøver_3.jpeg" alt="Prosjekt 4" class="project-card-image" />
+          <a
+            href="./prosjekt-plankton.html"
+            class="project-card"
+            data-category="forsker"
+          >
+            <img
+              src="./bilder/prosjekt_plankton/planktonprøver_3.jpeg"
+              alt="Prosjekt 4"
+              class="project-card-image"
+            />
             <div class="project-card-content">
               <span class="category-badge forsker">Forsker</span>
               <h2>Plankton</h2>
-              <p>Vi har undersøkt plankton i havet kontinuerlig i løpet av året.</p>
+              <p>
+                Vi har undersøkt plankton i havet kontinuerlig i løpet av året.
+              </p>
             </div>
           </a>
 
           <!--Planteprosjektet-->
-          <a href="./prosjekt-plante.html" class="project-card" data-category="forsker" data-category2="tekno">
-            <img src="./bilder/prosjekt_plante/plante_spire.jpg" alt="Prosjekt 5" class="project-card-image" />
+          <a
+            href="./prosjekt-plante.html"
+            class="project-card"
+            data-category="forsker"
+            data-category2="tekno"
+          >
+            <img
+              src="./bilder/prosjekt_plante/plante_spire.jpg"
+              alt="Prosjekt 5"
+              class="project-card-image"
+            />
             <div class="project-card-content">
               <span class="category-badge forsker">Forsker</span>
               <span class="category-badge tekno">Tekno</span>
@@ -154,34 +226,52 @@
           </a>
 
           <!--Begroingsplater-->
-          <a href="./prosjekt_begroingsplater.html" class="project-card" data-category="forsker">
-            <img src="./bilder/prosjekt_begroingsplater/pusser_CDer.jpg" alt="Prosjekt 6" class="project-card-image" />
+          <a
+            href="./prosjekt_begroingsplater.html"
+            class="project-card"
+            data-category="forsker"
+          >
+            <img
+              src="./bilder/prosjekt_begroingsplater/pusser_CDer.jpg"
+              alt="Prosjekt 6"
+              class="project-card-image"
+            />
             <div class="project-card-content">
               <span class="category-badge forsker">Forsker</span>
               <h2>Begroingsplater</h2>
               <p>Nokke cda og stuuf</p>
             </div>
           </a>
-
-
-
         </div>
-
-
-      
       </section>
     </main>
 
     <footer>
       <div class="social-links">
-        <a href="https://www.instagram.com/sfhs_forskerspire/" target="_blank" rel="noopener noreferrer">Forsker Instagram</a>
-        <a href="https://www.instagram.com/sfhs_teknologi/" target="_blank" rel="noopener noreferrer">Tekno Instagram</a>
-        <a href="https://www.instagram.com/svalbardfhs/" target="_blank" rel="noopener noreferrer">Svalbard Folkehøgskole Instagram</a>
+        <a
+          href="https://www.instagram.com/sfhs_forskerspire/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Forsker Instagram</a
+        >
+        <a
+          href="https://www.instagram.com/sfhs_teknologi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Tekno Instagram</a
+        >
+        <a
+          href="https://www.instagram.com/svalbardfhs/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Svalbard Folkehøgskole Instagram</a
+        >
       </div>
       <div class="footer-text">
-        <p>2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire</p>
+        <p>
+          2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire
+        </p>
       </div>
-      
     </footer>
 
     <script src="./index.js"></script>
