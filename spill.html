@@ -13,8 +13,25 @@
     <link rel="stylesheet" href="./meny.css" />
     <link rel="icon" type="image/x-icon" href="SFHS_logo.ico" />
     <style>
-      body{
-        height: 100vh;
+      .score {
+        text-align: center;
+        color: white;
+      }
+      .container {
+        display: grid;
+        justify-self: center;
+        width: 400px;
+        height: 400px;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        gap: 0;
+        background-color: white;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+  
+      .container div {
+        border: 1px solid black;
       }
     </style>
   </head>
@@ -44,207 +61,188 @@
     <h1 class="score">0</h1> <!-- TODO: Legge til leaderboard --> 
     <!-- TODO: Passe på at den ikkje er goofy på mobil -->
     <div class="container"></div>
-
-  </body>
-  <style>
-    .score {
-      text-align: center;
-      color: white;
-    }
-    .container {
-      display: grid;
-      justify-self: center;
-      width: 400px;
-      height: 400px;
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: repeat(10, 1fr);
-      gap: 0;
-      background-color: white;
-      margin-top: 20px;
-      margin-bottom: 40px;
-    }
-
-    .container div {
-      border: 1px solid black;
-    }
-  </style>
-  <script>
-    const container = document.querySelector(".container");
-    const scoreDisplay = document.querySelector(".score");
-
-    let divs = [];
-    gameStarted = false;
-    score = 0;
-
-    document.addEventListener("keydown", () => {
-      if (!gameStarted) {
-        gameStarted = true;
-        document.body.style.overflow = "hidden"; // Disable scrolling
-      }
-    });
-
-    for (let x = 0; x < 10; x++) {
-      divs[x] = [];
-
-      for (let y = 0; y < 10; y++) {
-        const div = document.createElement("div");
-        container.appendChild(div);
-        divs[x][y] = div;
-      }
-    }
-    previousPlayerLastPos = [4, 4];
-    playerPos = [4, 4];
-    playerPositions = [playerPos];
-    divs[playerPos[0]][playerPos[1]].style.backgroundColor = "red";
-
-    applePos = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
-    divs[applePos[0]][applePos[1]].style.backgroundImage =
-      "url('./spillbilder/apple.png')";
-    divs[applePos[0]][applePos[1]].style.backgroundSize = "cover";
-
-    function wipeBoard() {
+    
+    <script>
+      const container = document.querySelector(".container");
+      const scoreDisplay = document.querySelector(".score");
+  
+      let divs = [];
+      gameStarted = false;
+      score = 0;
+  
+      document.addEventListener("keydown", () => {
+        if (!gameStarted) {
+          gameStarted = true;
+          document.body.style.overflow = "hidden"; // Disable scrolling
+        }
+      });
+  
       for (let x = 0; x < 10; x++) {
+        divs[x] = [];
+  
         for (let y = 0; y < 10; y++) {
-          divs[x][y].style.backgroundColor = "white";
+          const div = document.createElement("div");
+          container.appendChild(div);
+          divs[x][y] = div;
         }
       }
-    }
-
-    function updateApple() {
-      for (let i = 0; i < playerPositions.length; i++) {
-        divs[playerPositions[i][0]][
-          playerPositions[i][1]
-        ].style.backgroundColor = "red";
+      previousPlayerLastPos = [4, 4];
+      playerPos = [4, 4];
+      playerPositions = [playerPos];
+      divs[playerPos[0]][playerPos[1]].style.backgroundColor = "red";
+  
+      applePos = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
+      divs[applePos[0]][applePos[1]].style.backgroundImage =
+        "url('./spillbilder/apple.png')";
+      divs[applePos[0]][applePos[1]].style.backgroundSize = "cover";
+  
+      function wipeBoard() {
+        for (let x = 0; x < 10; x++) {
+          for (let y = 0; y < 10; y++) {
+            divs[x][y].style.backgroundColor = "white";
+          }
+        }
       }
-      if (playerPos[0] === applePos[0] && playerPos[1] === applePos[1]) {
-        divs[applePos[0]][applePos[1]].style.backgroundImage = "none";
-        score++;
-        scoreDisplay.textContent = score;
-
-        do {
-          applePos = [
-            Math.floor(Math.random() * 10),
-            Math.floor(Math.random() * 10),
-          ];
-        } while (
-          playerPositions.some(
-            (pos) => pos[0] === applePos[0] && pos[1] === applePos[1]
-          )
-        );
-
-        divs[applePos[0]][applePos[1]].style.backgroundImage =
-          "url('./spillbilder/apple.png')";
-        divs[applePos[0]][applePos[1]].style.backgroundSize = "cover";
-
-        playerPositions.push([...playerPos]);
+  
+      function updateApple() {
+        for (let i = 0; i < playerPositions.length; i++) {
+          divs[playerPositions[i][0]][
+            playerPositions[i][1]
+          ].style.backgroundColor = "red";
+        }
+        if (playerPos[0] === applePos[0] && playerPos[1] === applePos[1]) {
+          divs[applePos[0]][applePos[1]].style.backgroundImage = "none";
+          score++;
+          scoreDisplay.textContent = score;
+  
+          do {
+            applePos = [
+              Math.floor(Math.random() * 10),
+              Math.floor(Math.random() * 10),
+            ];
+          } while (
+            playerPositions.some(
+              (pos) => pos[0] === applePos[0] && pos[1] === applePos[1]
+            )
+          );
+  
+          divs[applePos[0]][applePos[1]].style.backgroundImage =
+            "url('./spillbilder/apple.png')";
+          divs[applePos[0]][applePos[1]].style.backgroundSize = "cover";
+  
+          playerPositions.push([...playerPos]);
+        }
       }
-    }
-
-    let state = "ArrowRight";
-    document.addEventListener("keydown", (event) => {
-      if (!gameStarted) {
-        gameStarted = true;
-      }
-
-      if (
-        (state == "ArrowRight" && event.key == "ArrowLeft") ||
-        (state == "ArrowLeft" && event.key == "ArrowRight") ||
-        (state == "ArrowUp" && event.key == "ArrowDown") ||
-        (state == "ArrowDown" && event.key == "ArrowUp")
-      ) {
-        return;
-      } else if (
-        event.key == "ArrowRight" ||
-        event.key == "ArrowLeft" ||
-        event.key == "ArrowUp" ||
-        event.key == "ArrowDown"
-      ) {
-        state = event.key;
-      }
-    });
-    setInterval(() => {
-      if (gameStarted) updatePlayer();
-    }, 150);
-
-    // --- MOBILE SWIPE CONTROLS ---
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
-
-    document.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-    });
-
-    document.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      touchEndY = e.changedTouches[0].screenY;
-
-      const dx = touchEndX - touchStartX;
-      const dy = touchEndY - touchStartY;
-
-      // ignore tiny movements
-      if (Math.abs(dx) < 25 && Math.abs(dy) < 25) return;
-
-      // horizontal swipe
-      if (Math.abs(dx) > Math.abs(dy)) {
-        if (dx > 0 && state !== "ArrowLeft") state = "ArrowRight";
-        else if (dx < 0 && state !== "ArrowRight") state = "ArrowLeft";
-      }
-      // vertical swipe
-      else {
-        if (dy > 0 && state !== "ArrowUp") state = "ArrowDown";
-        else if (dy < 0 && state !== "ArrowDown") state = "ArrowUp";
-      }
-
-      gameStarted = true;
-      document.body.style.overflow = "hidden"; // disable scrolling while playing
-    });
-
-    function updatePlayer() {
-      //gjør at alt følger hodet
-      for (let i = playerPositions.length - 1; i > 0; i--) {
-        playerPositions[i] = [...playerPositions[i - 1]];
-      }
-
-      //gjør at hodet beveger seg etter
-      if (state == "ArrowRight") playerPositions[0][1]++;
-      else if (state == "ArrowLeft") playerPositions[0][1]--;
-      else if (state == "ArrowUp") playerPositions[0][0]--;
-      else if (state == "ArrowDown") playerPositions[0][0]++;
-
-      //ny spillerposisjon
-      playerPos = [...playerPositions[0]];
-      checkGameOver();
-      wipeBoard();
-      updateApple();
-    }
-
-    let gameOver = false;
-
-    function checkGameOver() {
-      if (gameOver) return;
-      if (
-        playerPos[0] < 0 ||
-        playerPos[0] > 9 ||
-        playerPos[1] < 0 ||
-        playerPos[1] > 9
-      ) {
-        gameOver = true;
-        location.reload();
-      }
-
-      for (let i = 1; i < playerPositions.length; i++) {
+  
+      let state = "ArrowRight";
+      document.addEventListener("keydown", (event) => {
+        if (!gameStarted) {
+          gameStarted = true;
+        }
+  
         if (
-          playerPos[0] === playerPositions[i][0] &&
-          playerPos[1] === playerPositions[i][1]
+          (state == "ArrowRight" && event.key == "ArrowLeft") ||
+          (state == "ArrowLeft" && event.key == "ArrowRight") ||
+          (state == "ArrowUp" && event.key == "ArrowDown") ||
+          (state == "ArrowDown" && event.key == "ArrowUp")
+        ) {
+          return;
+        } else if (
+          event.key == "ArrowRight" ||
+          event.key == "ArrowLeft" ||
+          event.key == "ArrowUp" ||
+          event.key == "ArrowDown"
+        ) {
+          state = event.key;
+        }
+      });
+      setInterval(() => {
+        if (gameStarted) updatePlayer();
+      }, 150);
+  
+      // --- MOBILE SWIPE CONTROLS ---
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
+  
+      document.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      });
+  
+      document.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+  
+        const dx = touchEndX - touchStartX;
+        const dy = touchEndY - touchStartY;
+  
+        // ignore tiny movements
+        if (Math.abs(dx) < 25 && Math.abs(dy) < 25) return;
+  
+        // horizontal swipe
+        if (Math.abs(dx) > Math.abs(dy)) {
+          if (dx > 0 && state !== "ArrowLeft") state = "ArrowRight";
+          else if (dx < 0 && state !== "ArrowRight") state = "ArrowLeft";
+        }
+        // vertical swipe
+        else {
+          if (dy > 0 && state !== "ArrowUp") state = "ArrowDown";
+          else if (dy < 0 && state !== "ArrowDown") state = "ArrowUp";
+        }
+  
+        gameStarted = true;
+        document.body.style.overflow = "hidden"; // disable scrolling while playing
+      });
+  
+      function updatePlayer() {
+        //gjør at alt følger hodet
+        for (let i = playerPositions.length - 1; i > 0; i--) {
+          playerPositions[i] = [...playerPositions[i - 1]];
+        }
+  
+        //gjør at hodet beveger seg etter
+        if (state == "ArrowRight") playerPositions[0][1]++;
+        else if (state == "ArrowLeft") playerPositions[0][1]--;
+        else if (state == "ArrowUp") playerPositions[0][0]--;
+        else if (state == "ArrowDown") playerPositions[0][0]++;
+  
+        //ny spillerposisjon
+        playerPos = [...playerPositions[0]];
+        checkGameOver();
+        wipeBoard();
+        updateApple();
+      }
+  
+      let gameOver = false;
+  
+      function checkGameOver() {
+        if (gameOver) return;
+        if (
+          playerPos[0] < 0 ||
+          playerPos[0] > 9 ||
+          playerPos[1] < 0 ||
+          playerPos[1] > 9
         ) {
           gameOver = true;
           location.reload();
         }
+  
+        for (let i = 1; i < playerPositions.length; i++) {
+          if (
+            playerPos[0] === playerPositions[i][0] &&
+            playerPos[1] === playerPositions[i][1]
+          ) {
+            gameOver = true;
+            location.reload();
+          }
+        }
       }
-    }
-  </script>
-  <script src="meny.js"></script>
+    </script>
+    <script src="meny.js"></script>
+  </body>
+  
+  
+  
 </html>
