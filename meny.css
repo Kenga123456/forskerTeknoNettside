@@ -301,3 +301,7 @@ footer .social-links a:hover {
     text-align: center;
   }  
 }
+
+.redirect{
+    color: var(--accent);
+}
