@@ -221,10 +221,11 @@ body{
         color: var(--ice);
         font-family:Georgia, 'Times New Roman', Times, serif;
     }
+    
     .prosjekt-bilder>img{
-        height: .5vh;
+        height: 20vh;
+        width: fit-content;
         margin-bottom:7%;
-        height: fit-content;
     }
 
 }
