@@ -49,16 +49,16 @@ async function main() {
     console.log("Saved", filename);
   }
 
-  const DATASERIES_ID = 11810;
+  const SENSOR_ID = 11810;
 
   const now = new Date();
-  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const sevenDaysAgo = new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000);
 
   const from = sevenDaysAgo.toISOString();
   const to = now.toISOString();
 
   const tempRes = await fetch(
-    `https://api.tilsig.com/v1/measurement/dataseries/${DATASERIES_ID}?from=${from}&to=${to}`,
+    `https://api.tilsig.com/GET v1/measurement/raw?sensorId=${SENSOR_ID}&from=${from}&to=${to}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
