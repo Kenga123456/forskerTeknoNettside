@@ -86,6 +86,30 @@ body{
     display: none;
 }
 
+.divided-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5rem;
+}
+.divided-con>div{
+    width: 48%;
+    height: 100%;
+}
+.divided-con>div>img{
+    width: 100%;
+    height: fit-content;
+}
+.divider{
+    margin: 2%;
+    background-color: var(--accent);
+    border-radius: 20px;
+    min-height: 200px;
+    width: 3px !important;
+}
+
+
+
 @media (max-width: 600px){
     .timeline-con{
         width: 95%;
@@ -197,5 +221,3 @@ body{
         color: var(--ice);
         font-family:Georgia, 'Times New Roman', Times, serif;
 }}
-
-
