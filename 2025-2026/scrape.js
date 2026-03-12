@@ -48,37 +48,6 @@ async function main() {
     fs.writeFileSync("telenor-images/" + filename, Buffer.from(buffer));
     console.log("Saved", filename);
   }
-
-  const DATASERIES_ID = 11810;
-
-  const now = new Date();
-  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-
-  const from = sevenDaysAgo.toISOString();
-  const to = now.toISOString();
-
-  const tempRes = await fetch(
-    `https://api.tilsig.com/v1/measurement/dataseries/${DATASERIES_ID}?from=${from}&to=${to}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
-  );
-
-  if (!tempRes.ok) {
-    const errorText = await tempRes.text();
-    throw new Error(
-      `Failed to fetch temp data: ${tempRes.status} ${tempRes.statusText}\n${errorText}`,
-    );
-  }
-
-  const tempData = await tempRes.json();
-  console.log(tempData.length);
-  fs.writeFileSync(
-    "2025-2026/tempdata.json",
-    JSON.stringify(tempData, null, 2),
-  );
 }
 
 main();
