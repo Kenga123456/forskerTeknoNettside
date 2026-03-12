@@ -42,9 +42,6 @@
 
         <h1>Bilder</h1>
         <div id="images-container"></div>
-        <img src="forskerTeknoNettside/telenor-images
-/0.jpg
-" alt="">
 
       </center>
         <br><br>
@@ -58,7 +55,7 @@
       imagesContainerEl = document.querySelector("#images-container");
       for (let i = 0; i < 40; i++) {
         imgEl = document.createElement("img");
-        imgEl.src = `forskerTeknoNettside/telenor-images/${i}.jpg`;
+        imgEl.src = `../telenor-images/${i}.jpg`;
         imagesContainerEl.appendChild(imgEl);
       }
 
