@@ -57,6 +57,14 @@ async function main() {
       },
     },
   );
+
+  if (!tempRes.ok) {
+    const errorText = await tempRes.text();
+    throw new Error(
+      `Failed to fetch temp data: ${tempRes.status} ${tempRes.statusText}\n${errorText}`,
+    );
+  }
+
   const tempData = await tempRes.json();
   console.log(tempData.length);
   fs.writeFileSync(
