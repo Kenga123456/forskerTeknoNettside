@@ -60,30 +60,9 @@ document.querySelector("footer").innerHTML = (`
 const menuCollapsed = document.querySelector(".menu-collapsed");
 const menu = document.querySelector(".menu");
 
-if (!menuCollapsed || !menu) {
-  console.warn("Meny ikke funnet: ", { menuCollapsed, menu });
-} else {
-  const toggleMenu = (event) => {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    menu.classList.toggle("show-menu");
-    console.log("meny klikket", menu.classList.contains("show-menu") ? "åpnet" : "lukket");
-  };
-
-  menuCollapsed.addEventListener("click", toggleMenu);
-  menuCollapsed.addEventListener("touchend", toggleMenu, { passive: false });
-
-  // Lukk meny ved klikk utenfor i mobilmodus
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && e.target !== menuCollapsed && menu.classList.contains("show-menu")) {
-      menu.classList.remove("show-menu");
-    }
-  });
-
-  menuCollapsed.style.zIndex = "1200";
-}
+menuCollapsed.addEventListener("click", () => {
+  menu.classList.toggle("show-menu");
+});
 
 window.addEventListener("scroll", () => {
   const nav = document.querySelector(".navbar");
@@ -95,4 +74,3 @@ window.addEventListener("scroll", () => {
     menu.classList.remove("shrink");
   }
 });
-
