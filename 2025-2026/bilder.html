@@ -60,13 +60,6 @@
         time: entry.timestamp
       }));
       console.log(tempsAndTimes);
-
-      const imagesContainerEl = document.querySelector("#images-container");
-      for (let i = 0; i < 40; i++) {
-        const imgEl = document.createElement("img");
-        imgEl.src = `../telenor-images/${i}.jpg`;
-        imagesContainerEl.appendChild(imgEl);
-      }
     })
     .catch(err => console.error("Failed to fetch JSON:", err));
       imagesContainerEl = document.querySelector("#images-container");
