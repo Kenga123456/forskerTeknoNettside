@@ -182,7 +182,7 @@ body{
     font-style: italic;
 }
 
-@media (max-width:600px) {
+@media (max-width:800px) {
 
     .compare-con{
         justify-content: space-around;
@@ -224,7 +224,6 @@ body{
     
     .prosjekt-bilder>img{
         height: 20vh;
-        width: fit-content;
         margin-bottom:7%;
     }
 
