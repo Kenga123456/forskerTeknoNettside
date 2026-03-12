@@ -1,8 +1,8 @@
 // Header
 document.querySelector("header").classList.add("navbar");
 document.querySelector("header").innerHTML = (`
-  <a href="./index.html">
-        <img src="../bilder/SFHS_logo.png" alt="" id="logo" />
+  <a href="/index.html">
+        <img src="/bilder/SFHS_logo.png" alt="" id="logo" />
       </a>
       <div class="title">
         <div id="title-over">SVALBARD FOLKEHØGSKOLE</div>
@@ -10,10 +10,10 @@ document.querySelector("header").innerHTML = (`
       </div>
       <div class="menu-collapsed"><p>Meny</p></div>
       <nav class="menu">
-        <a href="../index.html">Hjem</a>
-        <a href="../spill.html">Spill</a>
-        <a href="../index.html#prosjekter">Prosjekter</a>
-        <a href="../faq.html">FAQ</a>
+        <a href="/index.html">Hjem</a>
+        <a href="/spill.html">Spill</a>
+        <a href="/index.html#prosjekter">Prosjekter</a>
+        <a href="/faq.html">FAQ</a>
         <a href="https://www.folkehogskole.no/skole/svalbard/soknad" target="_blank">Søk nå</a>
       </nav>
 `);
