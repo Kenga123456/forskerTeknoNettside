@@ -40,6 +40,8 @@
                 <br><br><br>
         </div>
 
+        <canvas id="tempChart" width="800" height="400"></canvas>
+
         <h1>Bilder</h1>
         <div id="images-container"></div>
 
@@ -50,17 +52,67 @@
     <footer>
       <p>2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire</p>
   </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-    fetch("tempdata.json")
-    .then(response => response.json())
-    .then(data => {
-      const tempsAndTimes = data.map(entry => ({
-        temperature: entry.value,
-        time: entry.timestamp
-      }));
-      console.log(tempsAndTimes);
-    })
+      fetch("tempdata.json")
+      .then(response => response.json())
+      .then(data => {
+        const temperatureData = data.map(entry => ({
+          temperature: entry.value,
+          time: entry.timestamp
+        }));
+        console.log(temperatureData);
+      })
+      
+
+      temperatureData.sort(
+        (a, b) => new Date(a.timestamp) - new Date(b.timestamp),
+      );
+
+      const labels = temperatureData.map((d) =>
+        new Date(d.timestamp).toLocaleString(),
+      );
+      const values = temperatureData.map((d) => d.value);
+
+      const ctx = document.getElementById("tempChart");
+      const tempChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Temperature (°C)",
+              data: values,
+              fill: false,
+              borderColor: "blue",
+              backgroundColor: "lightblue",
+              tension: 0.2,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              display: true,
+              title: { display: true, text: "Timestamp" },
+              ticks: { maxRotation: 90, minRotation: 45 },
+            },
+            y: {
+              display: true,
+              title: { display: true, text: "Temperature (°C)" },
+            },
+          },
+          plugins: {
+            legend: { display: true },
+            tooltip: { mode: "index", intersect: false },
+          },
+        },
+      });
+
+
 
       imagesContainerEl = document.querySelector("#images-container");
       for (let i = 0; i < 40; i++) {
@@ -68,6 +120,8 @@
         imgEl.src = `../telenor-images/${i}.jpg`;
         imagesContainerEl.appendChild(imgEl);
       }
+
+
 
       document.querySelector(".icon").addEventListener("click", function () {
         document.querySelector("#menu").classList.toggle("show");
@@ -90,6 +144,12 @@
     .bildested {
       border-bottom: 3px solid black;
     }
+
+    canvas {
+        background: #f5f5f5;
+        border: 1px solid #ccc;
+        padding: 20px;
+      }
   </style>
   <script src="../meny.js"></script>
 </html>
