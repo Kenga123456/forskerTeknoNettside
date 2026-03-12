@@ -40,7 +40,9 @@
                 <br><br><br>
         </div>
 
-        <canvas id="tempChart"></canvas>
+        <div class="chart-container">
+          <canvas id="tempChart"></canvas>
+        </div>
 
         <h1>Bilder</h1>
         <div id="images-container"></div>
@@ -90,6 +92,8 @@
             ]
           },
           options: {
+            maintainAspectRatio: true,
+            aspectRatio: 2,
             responsive: true,
             scales: {
               x: {
@@ -143,14 +147,19 @@
       border-bottom: 3px solid black;
     }
 
-    canvas {
+    .chart-container {
         background: hsl(167, 35%, 65%);
         border: 1px solid #ccc;
         padding: 20px;
         width: 60%;
         margin: 0 auto;
-        height: 400px;
-      }
+    }
+
+    canvas {
+      display: block;
+      width: 100% !important;  /* fill container */
+      height: 100% !important;
+  }
   </style>
   <script src="../meny.js"></script>
 </html>
