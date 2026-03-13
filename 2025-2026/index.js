@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Aktiv-state for nav links (visuell respons)
-    document.querySelectorAll('.menu-nav a').forEach(a => {
-        a.addEventListener('click', function() {
-            document.querySelectorAll('.menu-nav a').forEach(x => x.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
 
     // Filter funksjonalitet
     const filterBtns = document.querySelectorAll('.filter-btn');
