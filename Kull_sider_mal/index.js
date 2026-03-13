@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Filter funksjonalitet
     const filterBtns = document.querySelectorAll('.filter-btn');
     if (filterBtns.length) {
         filterBtns.forEach(btn => {
@@ -20,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    //skriv en tekst om turen deres her og legg in bilder fra turen 
+    // Trip modal data
+    //her skriver dere inn teksten til turen og legger inn bildene dere har fra turen
     const tripData = {
         tur1: {
             title: "Tur til varden",
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     };
 
+    // Trip modal funksjonalitet
     const tripCards = document.querySelectorAll('.trip-card');
     const modal = document.getElementById('tripModal');
     const modalOverlay = document.getElementById('modalOverlay');
@@ -65,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalClose.addEventListener('click', closeTripModal);
     modalOverlay.addEventListener('click', closeTripModal);
-    
+
+    // Lukk modal med ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeTripModal();
