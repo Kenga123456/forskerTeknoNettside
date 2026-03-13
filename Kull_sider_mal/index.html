@@ -21,12 +21,10 @@
       
     <main>
       <section class="info">
-        <!--her kan dere skrive en kort intro om kullet deres -->
-
-        <h2>Velkommen til Forsker & Tekno (året deres)</h2>
+        <h2>Velkommen til Forsker & Tekno 25/26</h2>
         <p>
           Her er turer og prosjekter vi i forsker & tekno klassen har gjort i
-          skoleåret (året deres). Klikk på turene for å se mer informasjon og
+          skoleåret 2025-2026. Klikk på turene for å se mer informasjon og
           bilder fra turene. og du kan lese mer om prosjektene vi har jobbet med
           ved å klikke på prosjektene nederst på siden.
         </p>
@@ -36,10 +34,7 @@
         <h2>Turer og ekskursjoner</h2>
         <div class="trips-container">
 
-          <!--her kan dere kopiere koden under å skrive en kort beskrivelse
-          dere må også legge in et bilde
-          for å legge in mer info kan må dere til index.js å skrive inn tekst og legge in flere bilder der som kommer opp på kortet
-          når man trykker på turen-->
+          <!-- leg in turer her med et forside bilde og en kort beskrivelse av turen for en lengre tekst må dere skrive i index.js filen-->
           <!--Tur til varden-->
           <button class="trip-card" data-trip="tur1">
             <img
@@ -57,6 +52,12 @@
             </div>
           </button>
 
+    
+
+        </div>
+      </section>
+
+      <!--Modal som vises når man klikker på tur-->
       <div class="modal" id="tripModal">
         <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
@@ -78,14 +79,13 @@
       </section>
 
       <section class="projects-section">
-        <h2>Prosjekter</h2>
+        <h2>Prosjekter og turer</h2>
         <div class="projects-container">
-          <!--her kan dere kopiere koden under å legge in link til prosjekt siden data-catagory og fforside bilde, 
-          med en liten beskrivelse av prosjektet-->
-          <!--Husk å bruk data-category og data-category2 når dere bruker to tags-->
+
+          <!--her kan dere linke til en prosjekt side hvor dere legger in om det er forsker, tekno eller begge som har jobbet på det med et forside bilde og en kort beskrivelse-->
           <!--Sammarbeid med telenor -->
           <a
-            href="./bilder.html" 
+            href="./bilder.html"
             class="project-card"
             data-category="tekno"
             data-category2="forsker"
@@ -105,7 +105,6 @@
               </p>
             </div>
           </a>
-
         </div>
       </section>
     </main>
