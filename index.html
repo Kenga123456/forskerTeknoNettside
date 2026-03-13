@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nb">
   <head>
     <meta charset="UTF-8" />
@@ -23,20 +23,14 @@
         color: white;
       }
       #card-tekno {
-        background: linear-gradient(
-            135deg,
-            rgba(3, 30, 53, 0.9),
-            rgba(11, 33, 52, 0.4)
-          ),
+        background:
+          linear-gradient(135deg, rgba(3, 30, 53, 0.9), rgba(11, 33, 52, 0.4)),
           url("https://svalbardfolkehogskole.no/wp-content/uploads/2023/10/IMG_5757-768x1024.jpg")
             center/cover;
       }
       #card-forsker {
-        background: linear-gradient(
-            135deg,
-            rgba(3, 30, 53, 0.9),
-            rgba(11, 33, 52, 0.4)
-          ),
+        background:
+          linear-gradient(135deg, rgba(3, 30, 53, 0.9), rgba(11, 33, 52, 0.4)),
           url("https://svalbardfolkehogskole.no/wp-content/uploads/2020/12/FS-Cecilia2-1-832x1024.jpg")
             center/cover;
       }
@@ -47,7 +41,7 @@
         width: 50%;
         aspect-ratio: 1/1;
       }
-      
+
       .card-img-con {
         display: flex;
         flex-direction: column;
@@ -103,7 +97,9 @@
         color: var(--snow);
         text-decoration: none;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .highlight-card:hover {
@@ -144,22 +140,28 @@
         color: var(--ice);
       }
 
-  @media (max-width: 600px) {
-  .kull-card {
-    min-width: 150px;
-    max-width: 180px; 
-    flex: 1 1 calc(50% - 1rem); 
-  }
-  .highlight-card {
-    width: 90vw;
-  }
-  .info-card > div > p, a{
-        font-size: 3vw;
+      @media (max-width: 600px) {
+        .kull-card {
+          min-width: 150px;
+          max-width: 180px;
+          flex: 1 1 calc(50% - 1rem);
+        }
+        .highlight-card {
+          width: 90vw;
+        }
+
+        .info-card {
+          padding: 25px;
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 90%;
+        }
+
+        .info-card > div > p {
+          margin-right: -95px;
+          font-size: 4vw;
+        }
       }
-      .info-card > div > h2{
-        font-size: 4vw;
-      }
-}
 
       #prosjekter {
         scroll-margin-top: 110px;
@@ -196,16 +198,15 @@
     </header>
 
     <main>
-
       <section class="info">
         <h2>Velkommen til Forsker & Tekno</h2>
         <p>
-          Her er turer og prosjekter vi i forsker & tekno klassene har gjort i løpet av 
-          skoleåret. Klikk på skolekullene for å se mer informasjon om turer og prosjekter 
-          de forskjellige kullene har gjort. Gjerne benytt FAQ-siden (ofte stilte spørsmål) 
-          som man finner i menyen, hvis det er noe man lurer på. Man kan også gå inn på 
-          spill-siden og prøve ut spillene vi har lagd hvis man trenger en pause. 
-
+          Her er turer og prosjekter vi i forsker & tekno klassene har gjort i
+          løpet av skoleåret. Klikk på skolekullene for å se mer informasjon om
+          turer og prosjekter de forskjellige kullene har gjort. Gjerne benytt
+          FAQ-siden (ofte stilte spørsmål) som man finner i menyen, hvis det er
+          noe man lurer på. Man kan også gå inn på spill-siden og prøve ut
+          spillene vi har lagd hvis man trenger en pause.
         </p>
       </section>
 
@@ -214,13 +215,14 @@
           <h2>Teknologi & Innovasjon</h2>
           <br />
           <p>
-            Er du nysgjerrig og liker å tenke nyskapende?<br>
-            På teknologi og innovasjon får du prøve deg 
-            fram med ny teknologi og utvikle produkter for å løse reele problemer.
-            I løpet av året får du prøvd deg på mange prossesser som blant annet: 3D-printing, laserkutting, programmering og produktutvikling.
+            Er du nysgjerrig og liker å tenke nyskapende?<br />
+            På teknologi og innovasjon får du prøve deg fram med ny teknologi og
+            utvikle produkter for å løse reele problemer. I løpet av året får du
+            prøvd deg på mange prossesser som blant annet: 3D-printing,
+            laserkutting, programmering og produktutvikling.
           </p>
           <a
-          class="redirect"
+            class="redirect"
             href="https://svalbardfolkehogskole.no/linjer/innovasjon-og-teknologi/"
             target="_blank"
             >Les mer</a
@@ -236,10 +238,12 @@
           <h2>Forskning og felt</h2>
           <br />
           <p>
-            Har du en liten forskerånd i deg?<br>  
-            På Forskning og felt får du forske på små og store ting som er aktuelle her på Svalbard.
-            I løpet av året blir du godt kjent med forsknings-prossessen og får møte mange forskjellige forskere, organisasjoner og selskap. 
-            I tillegg får du prøvd deg på å samle inn data og bruke aktuelt utstyr.
+            Har du en liten forskerånd i deg?<br />
+            På Forskning og felt får du forske på små og store ting som er
+            aktuelle her på Svalbard. I løpet av året blir du godt kjent med
+            forsknings-prossessen og får møte mange forskjellige forskere,
+            organisasjoner og selskap. I tillegg får du prøvd deg på å samle inn
+            data og bruke aktuelt utstyr.
           </p>
           <a
             class="redirect"
@@ -256,17 +260,15 @@
 
       <h2 id="prosjekter">Prosjekter og turer</h2>
 
-      <article class="hilights"> <!-- * Kan byttes ut etterhvert. Gjerne la nettsideprosjekt stå-->
+      <article class="hilights">
+        <!-- * Kan byttes ut etterhvert. Gjerne la nettsideprosjekt stå-->
 
-
-
-        <a
-          class="highlight-card"
-          href="./2025-2026/prosjekt-nettside.html"
-        >
+        <a class="highlight-card" href="./2025-2026/prosjekt-nettside.html">
           <div
             class="highlight-card-image"
-            style="background-image: url('./2025-2026/bilder/prosjekt_nettside/Kevin_lager_nettside.jpg')"
+            style="
+              background-image: url(&quot;./2025-2026/bilder/prosjekt_nettside/Kevin_lager_nettside.jpg&quot;);
+            "
           ></div>
           <div class="highlight-card-content">
             <span class="highlight-tag">Tekno · 25/26</span>
@@ -278,35 +280,29 @@
           </div>
         </a>
 
-
-        
-        <a
-        class="highlight-card"
-        href="./2024-2025/index.html"
-      >
-        <div
-          class="highlight-card-image"
-          style="background-image: url('./2024-2025/bilder/prosjekt_HITI/HITI_1.jpg')"
-        ></div>
-        <div class="highlight-card-content">
-          <span class="highlight-tag">Tur · 24/25</span>
-          <h3 class="fix">Hearts In The Ice</h3>
-          <p>
-            Klima- og forskningsreise sammen med Hearts In The Ice, med
-            sterke inntrykk av isbreer, historie og klimaendringer.
-          </p>
-        </div>
-      </a>
-
-
-
-        <a
-          class="highlight-card"
-          href="./2025-2026/prosjekt-ammoboks.html"
-        >
+        <a class="highlight-card" href="./2024-2025/index.html">
           <div
             class="highlight-card-image"
-            style="background-image: url('./2025-2026/bilder/prosjekt_ammoboks/3dammoboks2.png')"
+            style="
+              background-image: url(&quot;./2024-2025/bilder/prosjekt_HITI/HITI_1.jpg&quot;);
+            "
+          ></div>
+          <div class="highlight-card-content">
+            <span class="highlight-tag">Forsker, Tekno · 24/25</span>
+            <h3 class="fix">Hearts In The Ice</h3>
+            <p>
+              Klima- og forskningsreise sammen med Hearts In The Ice, med sterke
+              inntrykk av isbreer, historie og klimaendringer.
+            </p>
+          </div>
+        </a>
+
+        <a class="highlight-card" href="./2025-2026/prosjekt-ammoboks.html">
+          <div
+            class="highlight-card-image"
+            style="
+              background-image: url(&quot;./2025-2026/bilder/prosjekt_ammoboks/3dammoboks2.png&quot;);
+            "
           ></div>
           <div class="highlight-card-content">
             <span class="highlight-tag">Tekno · 25/26</span>
@@ -318,47 +314,45 @@
           </div>
         </a>
       </article>
-      
-      <article class="kull">
-        
+      <center>
         <h4>Se flere prosjekter og turer i de forskjellige årskullene:</h4>
-        
-        
+      </center>
+      <article class="kull">
         <div class="kull-con">
-
-          
-          
           <a href="./2025-2026/index.html">
             <div
               class="kull-card"
               style="
-                background: linear-gradient(
+                background:
+                  linear-gradient(
                     135deg,
                     rgba(153, 200, 241, 0.9),
                     rgba(255, 255, 255, 0.733)
                   ),
-                  url('./2025-2026/bilder/turer/varden_tur/klassebilde_på_varden.png') center/cover;
+                  url(&quot;./2025-2026/bilder/turer/varden_tur/klassebilde_på_varden.png&quot;)
+                    center/cover;
               "
             >
-
-          <div>
+              <div>
                 <h3>25/26</h3>
               </div>
             </div>
           </a>
 
           <!-- Start kull kort -->
-          
+
           <a href="./2024-2025/index.html">
             <div
               class="kull-card"
               style="
-                background: linear-gradient(
+                background:
+                  linear-gradient(
                     135deg,
                     rgba(153, 200, 241, 0.9),
                     rgba(255, 255, 255, 0.733)
                   ),
-                  url('./2024-2025/bilder/klassebilde-pent.jpg') center/cover;
+                  url(&quot;./2024-2025/bilder/klassebilde-pent.jpg&quot;)
+                    center/cover;
               "
             >
               <div>
@@ -367,25 +361,37 @@
             </div>
           </a>
           <!-- Slutt kull-kort -->
-
-          
         </div>
       </article>
     </main>
     <footer>
       <div class="social-links">
-        <a href="https://www.instagram.com/sfhs_forskerspire/" target="_blank" rel="noopener noreferrer">Forsker Instagram</a>
-        <a href="https://www.instagram.com/sfhs_teknologi/" target="_blank" rel="noopener noreferrer">Tekno Instagram</a>
-        <a href="https://www.instagram.com/svalbardfhs/" target="_blank" rel="noopener noreferrer">Svalbard Folkehøgskole Instagram</a>
+        <a
+          href="https://www.instagram.com/sfhs_forskerspire/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Forsker Instagram</a
+        >
+        <a
+          href="https://www.instagram.com/sfhs_teknologi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Tekno Instagram</a
+        >
+        <a
+          href="https://www.instagram.com/svalbardfhs/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Svalbard Folkehøgskole Instagram</a
+        >
       </div>
       <div class="footer-text">
-        <p>2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire</p>
+        <p>
+          2025 Svalbard Folkehøgskole · Teknologi & Innovasjon, Forskerspire
+        </p>
       </div>
-      
     </footer>
     <script src="./meny.js"></script>
-    <script>
-
-    </script>
+    <script></script>
   </body>
 </html>

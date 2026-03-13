@@ -91,25 +91,27 @@
             ]
           },
           options: {
-            maintainAspectRatio: true,
-            aspectRatio: 2,
-            responsive: true,
-            scales: {
-              x: {
-                display: true,
-                title: { display: true, text: "Dato" },
-                ticks: { maxRotation: 90, minRotation: 45 }
-              },
-              y: {
-                display: true,
-                title: { display: true, text: "Temperatur (°C)" }
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              title: { display: true, text: "Dato" },
+              ticks: {
+                maxRotation: 60,
+                minRotation: 30,
+                autoSkip: true,
+                maxTicksLimit: 6
               }
             },
-            plugins: {
-              legend: { display: true },
-              tooltip: { mode: "index", intersect: false }
+            y: {
+              title: { display: true, text: "Temperatur (°C)" }
             }
+          },
+          plugins: {
+            legend: { display: true },
+            tooltip: { mode: "index", intersect: false }
           }
+        }
         });
       })
       .catch(err => console.error("Failed to load temperature data:", err));
@@ -147,17 +149,26 @@
     }
 
     .chart-container {
-        background: hsl(167, 35%, 65%);
-        border: 1px solid #ccc;
-        padding: 20px;
-        width: 60%;
-        margin: 0 auto;
+      background: hsl(167, 35%, 65%);
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 90%;
+      max-width: 900px;
+      height: 350px;
+      margin: 0 auto;
     }
 
     canvas {
-      display: block;
-      width: 100% !important;  /* fill container */
+      width: 100% !important;
       height: 100% !important;
+    }
+
+    @media (max-width: 600px) {
+    .chart-container {
+      width: 95%;
+      height: 280px;
+      padding: 10px;
+    }
   }
   </style>
   <script src="../meny.js"></script>
