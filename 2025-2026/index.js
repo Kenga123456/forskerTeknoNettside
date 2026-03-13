@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!data) return;
 
         modalTitle.textContent = data.title;
-        modalDescription.textContent = data.description;
+        modalDescription.innerHTML = data.description;
         modalImages.innerHTML = data.images
             .map(img => `<img src="${img}" alt="${data.title}" />`)
             .join('');
