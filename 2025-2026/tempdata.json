@@ -1,5 +1,47 @@
 [
   {
+    "value": -8.8,
+    "unitId": 23,
+    "typeId": 2,
+    "sensorId": 11810,
+    "categoryId": 3,
+    "category": "Temperature",
+    "type": "Device Temperature",
+    "unit": "°C",
+    "stationId": 5438,
+    "deviceId": 13574,
+    "timestamp": "2026-03-13T02:00:05.001Z",
+    "sequence": 1
+  },
+  {
+    "value": -8.7,
+    "unitId": 23,
+    "typeId": 2,
+    "sensorId": 11810,
+    "categoryId": 3,
+    "category": "Temperature",
+    "type": "Device Temperature",
+    "unit": "°C",
+    "stationId": 5438,
+    "deviceId": 13574,
+    "timestamp": "2026-03-12T14:00:27.001Z",
+    "sequence": 1
+  },
+  {
+    "value": -8.5,
+    "unitId": 23,
+    "typeId": 2,
+    "sensorId": 11810,
+    "categoryId": 3,
+    "category": "Temperature",
+    "type": "Device Temperature",
+    "unit": "°C",
+    "stationId": 5438,
+    "deviceId": 13574,
+    "timestamp": "2026-03-12T11:00:28.001Z",
+    "sequence": 1
+  },
+  {
     "value": -9,
     "unitId": 23,
     "typeId": 2,
@@ -333,48 +375,6 @@
     "stationId": 5438,
     "deviceId": 13574,
     "timestamp": "2026-03-06T11:00:26.001Z",
-    "sequence": 1
-  },
-  {
-    "value": -6.9,
-    "unitId": 23,
-    "typeId": 2,
-    "sensorId": 11810,
-    "categoryId": 3,
-    "category": "Temperature",
-    "type": "Device Temperature",
-    "unit": "°C",
-    "stationId": 5438,
-    "deviceId": 13574,
-    "timestamp": "2026-03-06T08:00:27.001Z",
-    "sequence": 1
-  },
-  {
-    "value": -5.3,
-    "unitId": 23,
-    "typeId": 2,
-    "sensorId": 11810,
-    "categoryId": 3,
-    "category": "Temperature",
-    "type": "Device Temperature",
-    "unit": "°C",
-    "stationId": 5438,
-    "deviceId": 13574,
-    "timestamp": "2026-03-06T02:00:04.001Z",
-    "sequence": 1
-  },
-  {
-    "value": -4.7,
-    "unitId": 23,
-    "typeId": 2,
-    "sensorId": 11810,
-    "categoryId": 3,
-    "category": "Temperature",
-    "type": "Device Temperature",
-    "unit": "°C",
-    "stationId": 5438,
-    "deviceId": 13574,
-    "timestamp": "2026-03-05T14:00:28.001Z",
     "sequence": 1
   }
 ]

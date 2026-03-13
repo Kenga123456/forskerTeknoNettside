@@ -87,11 +87,80 @@
         margin-bottom: 2rem;
       }
 
+      /*____________________________Prosjekt-highlights____________________________________*/
+      .hilights {
+        width: 100%;
+        max-width: 1200px;
+        margin: 2rem auto 3rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .highlight-card {
+        display: flex;
+        flex-direction: column;
+        width: min(320px, 90vw);
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          rgba(3, 30, 53, 0.9),
+          rgba(11, 33, 52, 0.7)
+        );
+        color: var(--snow);
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .highlight-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+      }
+
+      .highlight-card-image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .highlight-card-content {
+        padding: 1.25rem 1.5rem 1.75rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .highlight-tag {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--ice);
+        opacity: 0.9;
+      }
+
+      .highlight-card-content h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .highlight-card-content p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--ice);
+      }
+
   @media (max-width: 600px) {
   .kull-card {
     min-width: 150px;
     max-width: 180px; 
     flex: 1 1 calc(50% - 1rem); 
+  }
+  .highlight-card {
+    width: 90vw;
   }
   .info-card > div > p, a{
         font-size: 3vw;
@@ -136,6 +205,19 @@
     </header>
 
     <main>
+
+      <section class="info">
+        <h2>Velkommen til Forsker & Tekno</h2>
+        <p>
+          Her er turer og prosjekter vi i forsker & tekno klassene har gjort i løpet av 
+          skoleåret. Klikk på skolekullene for å se mer informasjon om turer og prosjekter 
+          de forskjellige kullene har gjort. Gjerne benytt FAQ-siden (ofte stilte spørsmål) 
+          som man finner i menyen, hvis det er noe man lurer på. Man kan også gå inn på 
+          spill-siden og prøve ut spillene vi har lagd hvis man trenger en pause. 
+
+        </p>
+      </section>
+
       <article class="info-card" id="card-tekno">
         <div>
           <h2>Teknologi & Innovasjon</h2>
@@ -183,8 +265,70 @@
 
       <h2 id="prosjekter">Prosjekter</h2>
 
-      <article class="kull">
+      <article class="hilights"> <!-- * Kan byttes ut etterhvert. Gjerne la nettsideprosjekt stå-->
 
+
+
+        <a
+          class="highlight-card"
+          href="./2025-2026/prosjekt-nettside.html"
+        >
+          <div
+            class="highlight-card-image"
+            style="background-image: url('./2025-2026/bilder/prosjekt_nettside/Kevin_lager_nettside.jpg')"
+          ></div>
+          <div class="highlight-card-content">
+            <span class="highlight-tag">Tekno · 25/26</span>
+            <h3 class="fix">Nettsideprosjekt</h3>
+            <p>
+              Utvikling av denne nettsiden for å samle turer, prosjekter og
+              historier fra Forsker &amp; Tekno-kullene.
+            </p>
+          </div>
+        </a>
+
+
+        
+        <a
+        class="highlight-card"
+        href="./2024-2025/index.html"
+      >
+        <div
+          class="highlight-card-image"
+          style="background-image: url('./2024-2025/bilder/prosjekt_HITI/HITI_1.jpg')"
+        ></div>
+        <div class="highlight-card-content">
+          <span class="highlight-tag">Tur · 24/25</span>
+          <h3 class="fix">Hearts In The Ice</h3>
+          <p>
+            Klima- og forskningsreise sammen med Hearts In The Ice, med
+            sterke inntrykk av isbreer, historie og klimaendringer.
+          </p>
+        </div>
+      </a>
+
+
+
+        <a
+          class="highlight-card"
+          href="./2025-2026/prosjekt-ammoboks.html"
+        >
+          <div
+            class="highlight-card-image"
+            style="background-image: url('./2025-2026/bilder/prosjekt_ammoboks/3dammoboks2.png')"
+          ></div>
+          <div class="highlight-card-content">
+            <span class="highlight-tag">Tekno · 25/26</span>
+            <h3 class="fix">Ammunisjonsboks</h3>
+            <p>
+              Design og 3D-printing av robuste ammunisjonsbokser gjennom flere
+              runder med prototyper og testing.
+            </p>
+          </div>
+        </a>
+      </article>
+      
+      <article class="kull">
         <div class="kull-con">
 
           

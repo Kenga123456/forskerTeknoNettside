@@ -10,12 +10,12 @@ body{
 .boks-con>img{
     width: 80%;
 }
-.info{
+.inf{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.info>div{
+.inf>div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,8 +97,9 @@ body{
     height: 100%;
 }
 .divided-con>div>img{
-    width: 100%;
-    height: fit-content;
+    max-width: 40vw;
+    height: auto;
+    width: auto;
 }
 .divider{
     margin: 2%;
@@ -182,7 +183,7 @@ body{
     font-style: italic;
 }
 
-@media (max-width:600px) {
+@media (max-width:800px) {
 
     .compare-con{
         justify-content: space-around;
@@ -220,4 +221,13 @@ body{
         font-size: 1.2rem;
         color: var(--ice);
         font-family:Georgia, 'Times New Roman', Times, serif;
-}}
+    }
+    
+    .prosjekt-bilder>img{
+        max-width: 80vw;
+        width: auto;
+        height: auto;
+        margin-bottom:7%;
+    }
+
+}

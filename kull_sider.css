@@ -1,72 +1,6 @@
-:root {
-  --night: #07121c;
-  --fjord: #0f3d5c;
-  --glacier: #7fd8ff;
-  --snow: #f6fbff;
-  --ice: #b7d1e2;
-  --accent: #00c0a3;
-  --trip: #ffb74d; /* Ny farge for tur-taggen */
-  --forskertekno: #00a8d8; /* Blanding av glacier og accent */
-
-  --font-primary: "Montserrat", sans-serif;
-  --font-secondary: "Space Grotesk", sans-serif;
-}
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base */
-body {
-  font-family: var(--font-primary);
-  background: radial-gradient(circle at top, var(--fjord) 0%, var(--night) 60%);
-  color: var(--snow);
-  min-height: 100vh;
-}
-
-/* Header / Nav */
-header {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  height: 16vh;
-  background: var(--night);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding-right: 0;
-}
-
 a {
   text-decoration: none;
   color: var(--snow);
-}
-
-/* Logo / Title */
-#logo {
-  height: 90%;
-  margin-left: 5%;
-}
-.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-weight: bold;
-  width: 50%;
-}
-#title-over {
-  color: var(--glacier);
-  font-size: 85%;
-}
-#title-under {
-  font-size: 1.3rem;
-}
-.apply {
-  color: var(--accent);
-  font-weight: 600;
 }
 
 /* Filter knapper */
@@ -117,24 +51,8 @@ a {
 
 
 
-/* Info-boks */
-.info {
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
-  padding: 1.5rem;
-  background: var(--fjord);
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  font-family: var(--font-primary);
-  color: var(--snow);
-  border-top: 3px solid var(--accent);
-}
-.info h2 {
-  font-family: var(--font-secondary);
-  color: var(--glacier);
-  margin-bottom: 0.5rem;
-}
+
+
 
 /* Kategori-badges */
 .category-badge {
