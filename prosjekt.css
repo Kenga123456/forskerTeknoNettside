@@ -97,8 +97,9 @@ body{
     height: 100%;
 }
 .divided-con>div>img{
-    width: 100%;
-    height: fit-content;
+    max-width: 40vw;
+    height: auto;
+    width: auto;
 }
 .divider{
     margin: 2%;
@@ -182,7 +183,7 @@ body{
     font-style: italic;
 }
 
-@media (max-width:600px) {
+@media (max-width:800px) {
 
     .compare-con{
         justify-content: space-around;
@@ -223,8 +224,9 @@ body{
     }
     
     .prosjekt-bilder>img{
-        height: 20vh;
-        width: fit-content;
+        max-width: 80vw;
+        width: auto;
+        height: auto;
         margin-bottom:7%;
     }
 
