@@ -296,7 +296,6 @@ a {
   border-radius: 8px;
   object-fit: cover;
   height: auto;
-  max-height: 300px;
 }
 
 /* Trip-kort som button */
