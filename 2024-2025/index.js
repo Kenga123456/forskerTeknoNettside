@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // Aktiv-state for nav links (visuell respons)
+    document.querySelectorAll('.menu-nav a').forEach(a => {
+        a.addEventListener('click', function() {
+            document.querySelectorAll('.menu-nav a').forEach(x => x.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 
     // Filter funksjonalitet
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -11,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 document.querySelectorAll('.project-card').forEach(card => {
                     const category = card.getAttribute('data-category');
-                    const category2 = card.getAttribute('data-category');
+                    const category2 = card.getAttribute('data-category2');
                     if (filter === 'all' || category === filter || category2 === filter) {
                         card.classList.remove('hidden');
                     } else {
@@ -26,18 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const tripData = {
         tur1: {
             title: "Hearts In The Ice",
-            description: 'Klassen ble invitert til å bli med <a href="https://www.heartsintheice.com/">"Hearts In The Ice"</a> på en båttokt rundt sørsiden av Svalbard. Formålet med tokten var å samle klimaaktivister fra hele verden og sammen se på konsekvensene av klimaendringene. Disse er da enda tydeligere på Svalbard. Hver kveld hadde vi diskusjonspaneler med eksperter, og på dagene så vi på både hvalfangsthistorie og isbreer. Vi fikk til slutt også besøke hytta “Bamsebu” som Hilde Fålun Strøm og Sunniva Sorby, stifterne av HITI, overvintret på i 9 måneder.',
+            description: 'Klassen ble invitert til å bli med <a href="https://www.heartsintheice.com/" class="redirect">Hearts In The Ice</a> på en båttokt rundt sørsiden av Svalbard. Formålet med tokten var å samle klimaaktivister fra hele verden og sammen se på konsekvensene av klimaendringene. Disse er da enda tydeligere på Svalbard. Hver kveld hadde vi diskusjonspaneler med eksperter, og på dagene så vi på både hvalfangsthistorie og isbreer. Vi fikk til slutt også besøke hytta “Bamsebu” som Hilde Fålun Strøm og Sunniva Sorby, stifterne av HITI, overvintret på i 9 måneder.',
             images: ["./bilder/prosjekt_HITI/HITI_3.jpg", "./bilder/prosjekt_HITI/HITI_4.jpg", "./bilder/prosjekt_HITI/HITI_5.jpg", "./bilder/prosjekt_HITI/HITI_6.jpg"]
         },
         tur2: {
             title: "Besøk på KSAT",
-            description: "Vi fikk komme på besøk til <a href=”https://www.ksat.no/”>KSAT</a> sin stasjon på Platåfjellet, kalt Svalsat. Der fikk vi en gjennomgang av hvordan de driver sin virksomhet, hvordan satellitter i seg selv har fungert opp gjennom tidene og hvordan de fungerer nå. Til slutt fikk vi lov til å komme inn i en av de ikoniske satellittene og se den fungere.",
-            images: []
+            description: `Vi fikk komme på besøk til <a href="https://www.ksat.no/" class="redirect">KSAT</a> sin stasjon på Platåfjellet, kalt Svalsat. Der fikk vi en gjennomgang av hvordan de driver sin virksomhet, hvordan satellitter i seg selv har fungert opp gjennom tidene og hvordan de fungerer nå. Til slutt fikk vi lov til å komme inn i en av de ikoniske satellittene og se den fungere.`,
+            images: ["./bilder/turer/tur_ksat/KSAT24_2.jpg", "./bilder/turer/tur_ksat/KSAT24_3.jpg"]
         },
         tur3: {
             title: "Overnatting med kunst-klassen",
-            description: "Årets første overnatting med kunst klassen i tillegg til årets første isbjørn Sammen med skolens kunst -og naturfoto-klasse tok vi en dagstur til skolens egen hytte. Der var det mulighet til enten å prøve seg på rypejakt med tur opp i fjellet eller en roligere tur med leking på den nye isen. Turen måtte avsluttes tidlig grunnet en varsling fra Sysselmesteren om isbjørn i området. Vi beveget oss da raskt tilbake mot skolen, men rakk heldigvis å få sett bjørnen gjennom kikkert. Deretter hadde vi en overnatting på NITO-hytta og Kirkehytta sammen med kunstklassen. Det ble god taco til middag og morsomme hytteleker utpå kvelden. En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
-            images: []
+            description: "Årets første overnatting med kunst klassen i tillegg til årets første isbjørn. Sammen med skolens kunst -og naturfoto-klasse tok vi en dagstur til skolens egen hytte. Der var det mulighet til enten å prøve seg på rypejakt med tur opp i fjellet eller en roligere tur med leking på den nye isen. Turen måtte avsluttes tidlig grunnet en varsling fra Sysselmesteren om isbjørn i området. Vi beveget oss da raskt tilbake mot skolen, men rakk heldigvis å få sett bjørnen gjennom kikkert. Deretter hadde vi en overnatting på NITO-hytta og Kirkehytta sammen med kunstklassen. Det ble god taco til middag og morsomme hytteleker utpå kvelden. En fantastisk naturvandring hvor vi observerte flora og fauna, tok notater og lærte mer om det arktiske økosystemet.",
+            images: ["./bilder/turer/tur_kunst/Kunsttur_1.jpeg","./bilder/turer/tur_kunst/Kunsttur_2.jpeg", "./bilder/turer/tur_kunst/Kunsttur_3.jpeg"]
         }
     };
 
@@ -85,6 +93,4 @@ document.addEventListener('DOMContentLoaded', () => {
             closeTripModal();
         }
     });
-
-    // Kort-klikk ikke nødvendig for navigasjon (kort er <a>), men behold evt. ekstra oppførsel her.
 });

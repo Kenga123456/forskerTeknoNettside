@@ -49,11 +49,6 @@ a {
   transform: scaleX(1);
 }
 
-
-
-
-
-
 /* Kategori-badges */
 .category-badge {
   display: inline-block;
@@ -301,7 +296,6 @@ a {
   border-radius: 8px;
   object-fit: cover;
   height: auto;
-  max-height: 300px;
 }
 
 /* Trip-kort som button */
