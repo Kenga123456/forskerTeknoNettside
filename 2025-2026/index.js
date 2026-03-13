@@ -46,6 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Andersenhytta",
             description: "4. – 6. november hadde vi overnatting på Andersenhytta. Vi gikk fra skolen inn til hytta etter middag 3. november.  ",
             images:  ["./bilder/turer/andersenhytta_hyttetur/veldig_fin_selfie_av_Erik.jpg", "./bilder/turer/andersenhytta_hyttetur/Andersenhytta.png"],
+        },
+        tur4: {
+            title: "Gruve 3",
+            description: "Dato fikk vi en omvisning av gruve 3. Først fikk vi en presentasjon om geologi og gullindustrien før vi fikk en omvisning inne i gruven. ",
+            images:  ["./bilder/turer/Gruve_3/selfie_gruve_3.jpg", "./bilder/turer/Gruve_3/gruve_3_presentasjon.jpg", "./bilder/turer/Gruve_3/inne_i_gruve_3.jpg"],
         }
     };
 
