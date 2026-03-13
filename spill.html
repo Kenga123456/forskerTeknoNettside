@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spill</title>
-    
+
     <style>
       .score {
         text-align: center;
@@ -55,7 +55,8 @@
     <!-- TODO: Legge til leaderboard -->
     <!-- TODO: Passe på at den ikkje er goofy på mobil -->
     <div class="container"></div>
-    <footer style="display:none"></footer><!--Den er jævlig goofy-->
+    <footer style="display: none"></footer>
+    <!--Den er jævlig goofy-->
 
     <script>
       const container = document.querySelector(".container");
@@ -132,9 +133,17 @@
         }
       }
 
-      let state = "ArrowRight";
+      let state = "";
       document.addEventListener("keydown", (event) => {
         if (!gameStarted) {
+          if (
+            event.key == "ArrowRight" ||
+            event.key == "ArrowLeft" ||
+            event.key == "ArrowUp" ||
+            event.key == "ArrowDown"
+          ) {
+            state = event.key;
+          }
           gameStarted = true;
         }
 
