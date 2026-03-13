@@ -24,6 +24,18 @@ function getSiteBaseUrl() {
 const siteBaseUrl = getSiteBaseUrl();
 const href = (path) => new URL(path, siteBaseUrl).href;
 
+
+//head
+document.querySelector("head").insertAdjacentHTML("beforeend",`<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../meny.css" />
+    <link rel="icon" type="image/x-icon" href="../SFHS_logo.ico" />`)
+
+//favicon
+document.getElementById("favicon").href="/SFHS_logo"
+
+
 // Header
 document.querySelector("header").classList.add("navbar");
 document.querySelector("header").innerHTML = (`
