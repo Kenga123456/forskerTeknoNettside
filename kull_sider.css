@@ -307,14 +307,6 @@ a {
   height: auto;
 }
 
-/* Trip-kort som button */
-.trip-card {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
 /* Responsive tweaks */
 @media (max-width: 900px) {
   /* hide desktop nav and show burger */
