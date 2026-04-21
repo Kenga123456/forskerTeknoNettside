@@ -77,6 +77,16 @@ a {
   background-color: var(--trip);
   color: var(--night);
 }
+.category-badge.wip {
+  background: var(--WIP);
+  text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px  1px 0 #000,
+    1px  1px 0 #000;
+  color: var(--snow);
+  border: solid yellow;
+}
 
 /* Prosjekt / Tur - kort og containere (sammenslått) */
 .projects-container,
