@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kull 26/27</title>
+    <link rel="stylesheet" href="../meny.css" />
+    <link rel="stylesheet" href="../kull_sider.css">
+  </head>
+  <body>
+    <header class="navbar">
+    </header>
+      
+    <main>
+      <section class="info">
+        <h2>Velkommen til Forsker & Tekno 26/27</h2>
+        <p>
+          Her er turer og prosjekter vi i forsker & tekno klassen har gjort i
+          skoleåret 2026-2027. Klikk på turene for å se mer informasjon og
+          bilder fra turene. og du kan lese mer om prosjektene vi har jobbet med
+          ved å klikke på prosjektene nederst på siden.
+        </p>
+      </section>
+
+      <section class="trips-section">
+        <h2>Turer og ekskursjoner</h2>
+        <div class="trips-container">
+
+          <!-- leg in turer her med et forside bilde og en kort beskrivelse av turen for en lengre tekst må dere skrive i index.js filen-->
+          <!--Tur til varden-->
+          <button class="trip-card" data-trip="tur1">
+            <img
+              src="./bilder/turer/varden_tur/klassebilde_på_varden.png"
+              alt="Tur 1"
+              class="trip-card-image"
+            />
+            <div class="trip-card-content">
+              <span class="category-badge tur">Tur</span>
+              <h2>Tur til varden</h2>
+              <p>
+                Første tur med klassen på starten av året som var en fin
+                mulighet for å bli bedre kjent
+              </p>
+            </div>
+          </button>
+
+    
+
+        </div>
+      </section>
+
+      <!--Modal som vises når man klikker på tur-->
+      <div class="modal" id="tripModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose">&times;</button>
+          <div class="modal-body">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div class="modal-images" id="modalImages"></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="filter-section">
+        <button class="filter-btn active" data-filter="all">
+          Alle Prosjekter
+        </button>
+        <button class="filter-btn" data-filter="forsker">Forsker</button>
+        <button class="filter-btn" data-filter="tekno">Tekno</button>
+      </section>
+
+      <section class="projects-section">
+        <h2>Prosjekter og turer</h2>
+        <div class="projects-container">
+
+          <!--her kan dere linke til en prosjekt side hvor dere legger in om det er forsker, tekno eller begge som har jobbet på det med et forside bilde og en kort beskrivelse-->
+          <!--Sammarbeid med telenor -->
+          <a
+            href="./prosjekt-mal.html"
+            class="project-card"
+            data-category="tekno"
+            data-category2="forsker"
+          >
+            <img
+              src="./bilder/prosjekt_telenor/avansert_ting.jpg"
+              alt="Prosjekt 2"
+              class="project-card-image"
+            />
+            <div class="project-card-content">
+              <span class="category-badge tekno">Tekno</span>
+              <span class="category-badge forsker">Forsker</span>
+              <h2>Mal på prosjekt</h2>
+              <p>
+                Her finner du mal til alle prosjektsider
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script src="./index.js"></script>
+    <script src="../meny.js"></script>
+  </body>
+</html>
