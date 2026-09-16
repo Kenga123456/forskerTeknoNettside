@@ -7,6 +7,12 @@
   --accent: #00c0a3;
   --trip: #ffb74d; /* Tur-tag*/
   --forskertekno: #00a8d8; /* Blanding av glacier og accent */
+  --WIP: repeating-linear-gradient(
+      45deg,
+      #000000 0 12px,
+      #ffd800 12px 24px
+    );
+  
 
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Space Grotesk", sans-serif;

@@ -77,6 +77,16 @@ a {
   background-color: var(--trip);
   color: var(--night);
 }
+.category-badge.wip {
+  background: var(--WIP);
+  text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px  1px 0 #000,
+    1px  1px 0 #000;
+  color: var(--snow);
+  border: solid yellow;
+}
 
 /* Prosjekt / Tur - kort og containere (sammenslått) */
 .projects-container,
@@ -91,16 +101,22 @@ a {
 
 .project-card,
 .trip-card {
-  background: var(--fjord);
+  background: linear-gradient(
+    165deg,
+    rgba(15, 61, 92, 0.92) 0%,
+    rgba(7, 18, 28, 0.94) 100%
+  );
+  border: 1px solid rgba(127, 216, 255, 0.22);   /* glacier tint */
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(0, 192, 163, 0.08) inset; 
   color: var(--snow);
   padding: 0;
   border-radius: 10px;
-  border: none;
   cursor: pointer;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -109,7 +125,9 @@ a {
 .project-card:hover,
 .trip-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(127, 216, 255, 0.28);
 }
 
 .project-card-image,
@@ -129,8 +147,9 @@ a {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(circle at top, var(--fjord) 0%, var(--night) 60%);
+  background: rgba(7, 18, 28, 0.55);
 }
+
 
 .project-card h2,
 .trip-card h2 {
@@ -296,14 +315,6 @@ a {
   border-radius: 8px;
   object-fit: cover;
   height: auto;
-}
-
-/* Trip-kort som button */
-.trip-card {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
 }
 
 /* Responsive tweaks */

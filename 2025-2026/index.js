@@ -41,17 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         tur4: {
             title: "Gruve 3",
-            description: "Dato fikk vi en omvisning av gruve 3. Først fikk vi en presentasjon om geologi og kullindustrien før vi fikk en omvisning inne i gruven. ",
+            description: "Dato fikk vi en omvisning av gruve 3 av en geolog. Først fikk vi en presentasjon om geologi og kullindustrien før vi fikk en omvisning inne i gruven. Der såg vi på forkastninger av kullalgene og andre geologiske ting. ",
             images:  ["./bilder/turer/Gruve_3/selfie_gruve_3.jpg", "./bilder/turer/Gruve_3/gruve_3_presentasjon.jpg", "./bilder/turer/Gruve_3/inne_i_gruve_3.jpg"],
         },
         tur5: {
             title: "Dronetur",
-            description: "Dato dro teknoklassen inn i Bolterdalen med dronene våre. Vi fyrte bål og koste oss mens vi prøvde fløy dronene. Dagen før tok de fleste i teknoklassen droneeksamen og det var derfor fint å få testet de ut. ",
+            description: "Dato dro teknoklassen inn i Bolterdalen med dronene våre. Vi fyrte bål og koste oss mens vi prøvde dronene. Dagen før tok de fleste i teknoklassen droneeksamen og det var derfor fint å få testet de ut. ",
             images:  ["./bilder/turer/dronetur_tur/Sejer_dronetur.jpg"],
         },
         tur6: {
             title: "Første skutertur",
-            description: "11. Mars dro klassen på sin første skutertur. Vi kjørte innover i dalen frem til ... og stoppet flere steder på veien for å se på kule ting. ",
+            description: "11. Mars dro klassen på sin første skutertur. Vi kjørte innover i dalen frem til jernsenga og stoppet flere steder på veien for å se på kule ting. Vi tiók videre lunsj med utsikt over tempelfjorden og tempelet ",
             images:  ["./bilder/turer/første_skutertur/"],
         }
     };
