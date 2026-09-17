@@ -6,6 +6,191 @@
     <title>Vanntank - Prosjekt</title> <!-- * Skift til prosjekttittel-->
     <link rel="stylesheet" href="../meny.css" />
     <link rel="stylesheet" href="../prosjekt.css">
+    <style>
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    width: min(90vw, 900px);
+}
+
+.controls {
+    text-align: center;
+}
+
+.level-readout {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-top: 10%;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(77, 163, 255, 0.35);
+    color: white;
+}
+
+.level-readout-age {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+}
+
+.tank {
+    height: 50vh;
+    width: 100%;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(0, 0, 0, 0.25) 100%);
+    box-shadow:
+        inset 0 0 40px rgba(0, 0, 0, 0.45),
+        inset 4px 4px 12px rgba(255, 255, 255, 0.08),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.water {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: linear-gradient(
+        to top,
+        #012a52 0%,
+        #024a7a 35%,
+        #1a7fd4 70%,
+        #4da3ff 100%
+    );
+    transition: height 0.15s ease-out;
+}
+
+.shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.surface {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 48px;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-45%);
+}
+
+.wave {
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    opacity: 0.55;
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+}
+
+.wave-1 {
+    top: 0;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 44c80-28 160 28 240 0s160-28 240 0 160 28 240 0 80-28 160 0v44H0z'/%3E%3C/svg%3E");
+    animation: wave-drift 6s linear infinite;
+}
+
+.wave-2 {
+    top: 6px;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88' preserveAspectRatio='none'%3E%3Cpath fill='%23a8d4ff' d='M0 50c100 20 200-20 300 0s200 20 300 0 100-20 200 0v38H0z'/%3E%3C/svg%3E");
+    animation: wave-drift 4.5s linear infinite reverse;
+}
+
+.wave-3 {
+    top: 2px;
+    height: 120%;
+    opacity: 0.25;
+    border-radius: 45%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+    animation: wave-roll 5s ease-in-out infinite;
+}
+
+.bubbles span {
+    position: absolute;
+    bottom: -10px;
+    width: var(--s, 8px);
+    height: var(--s, 8px);
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.15));
+    opacity: 0;
+    animation: rise var(--d, 4s) ease-in infinite;
+    animation-delay: var(--delay, 0s);
+    left: var(--x, 50%);
+}
+
+.bubbles span:nth-child(1) { --x: 12%; --s: 6px; --d: 3.5s; --delay: 0s; }
+.bubbles span:nth-child(2) { --x: 28%; --s: 10px; --d: 5s; --delay: 1.2s; }
+.bubbles span:nth-child(3) { --x: 45%; --s: 5px; --d: 4s; --delay: 0.5s; }
+.bubbles span:nth-child(4) { --x: 62%; --s: 9px; --d: 6s; --delay: 2s; }
+.bubbles span:nth-child(5) { --x: 78%; --s: 7px; --d: 4.5s; --delay: 0.8s; }
+.bubbles span:nth-child(6) { --x: 90%; --s: 5px; --d: 3.8s; --delay: 1.8s; }
+
+@keyframes wave-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(-25%); }
+}
+
+@keyframes wave-roll {
+    0%, 100% { transform: translateX(-5%) scale(1); }
+    50% { transform: translateX(5%) scale(1.05); }
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 200% 0; }
+    50% { background-position: -100% 0; }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-120vh) scale(0.6);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wave,
+    .shimmer,
+    .bubbles span {
+        animation: none !important;
+    }
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -13,8 +198,31 @@
     <main>
         <center>
             <h1>Prosjekt Vanntank</h1> <!-- * Prosjekt-tittel-->
+            <br><br><br>
+            <div class="app">
+                <div class="controls">
+                    
+                </div>
+                <div class="tank">
+                    <div class="water">
+                        
+                        <div class="shimmer" aria-hidden="true"></div>
+                        <div class="bubbles" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="surface" aria-hidden="true">
+                            <span class="wave wave-1"></span>
+                            <span class="wave wave-2"></span>
+                            <span class="wave wave-3"></span>
+                        </div>
+                        <p class="level-readout"></p>
+                    </div>
+                </div>
+            </div>
+
             <div class="boks-con">
                 <h3>Intro</h3>  <!-- * Hva er målet og grunnidé med prosjektet?-->
+
                 <br>
                     <p>På skolen har vi en vanntank i garasjen. Denne får vi fra bryggeriet på Svalbard sånn at vi slipper å fylle vann på butikken. Det er en del logistikk rundt det å få tankene, så vi ville gjøre det litt lettere.
                         Målet er å bruke en esp32 og en ultralydsensor for å måle vannstanden, og dermed sende data sånn at det er lettere for administrasjonen å få oversikt over hvor mye vann det er i tanken sånn at den kan byttes ut når den begynner å bli tom.
@@ -123,6 +331,8 @@
     </footer>
     
     <script src="../meny.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./waterLevel.js"></script>
 </body>
 </html>
 
