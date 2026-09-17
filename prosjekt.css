@@ -150,7 +150,7 @@ body{
 .prosjekt-bilder>img, .prosjekt-bilder>video{
     width: 30%;
     margin-bottom:7%;
-    height: fit-content;
+    height: auto;
 }
 .compare-con{
     justify-content: space-around;
