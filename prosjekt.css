@@ -147,7 +147,7 @@ body{
     align-items: center;
     
 }
-.prosjekt-bilder>img{
+.prosjekt-bilder>img, .prosjekt-bilder>video{
     width: 30%;
     margin-bottom:7%;
     height: fit-content;
